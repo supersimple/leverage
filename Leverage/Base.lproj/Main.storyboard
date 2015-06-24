@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="kfp-ke-S3e">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -104,6 +104,9 @@
                                     </view>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hj4-gK-buw">
                                         <rect key="frame" x="229" y="250" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="showLocation:" destination="kfp-ke-S3e" eventType="valueChanged" id="TvD-bX-Ceg"/>
+                                        </connections>
                                     </switch>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Show Location in List View" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFE-Wc-vVg">
                                         <rect key="frame" x="11" y="255" width="157" height="21"/>
@@ -154,6 +157,9 @@
                         <outlet property="apikeyField" destination="vA4-y8-hpr" id="LEP-qj-00P"/>
                         <outlet property="applyButton" destination="KXc-UF-tao" id="ki0-wm-QTj"/>
                         <outlet property="guidField" destination="EwO-Fh-MhG" id="Lj4-fJ-xxg"/>
+                        <outlet property="showCommitment" destination="kFB-Dx-W10" id="nad-Q8-lDW"/>
+                        <outlet property="showLocation" destination="Hj4-gK-buw" id="qXO-Ed-Uvx"/>
+                        <outlet property="showTeam" destination="TZi-L4-rfq" id="C0p-iq-iHE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xt7-ds-5MK" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -23,6 +23,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib
+        let userDefaults = NSUserDefaults.standardUserDefaults();
+        let lever_url:String = userDefaults.valueForKey("lever_url") as! String
+        let lever_api_key:String = userDefaults.valueForKey("lever_api_key") as! String
     }
     
     override func viewWillAppear(animated: Bool) {
