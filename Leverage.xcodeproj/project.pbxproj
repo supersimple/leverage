@@ -40,7 +40,6 @@
 		5F0639551B327E3A00277871 /* cellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0639541B327E3A00277871 /* cellView.swift */; };
 		5F1FADFB1B33964F00F4EF78 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1FADFA1B33964F00F4EF78 /* SettingsViewController.swift */; };
 		5F1FADFD1B33C6A100F4EF78 /* settings-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F1FADFC1B33C6A100F4EF78 /* settings-icon.png */; };
-		5FF86A1A1B3A293300316A0F /* Leverage in Resources */ = {isa = PBXBuildFile; fileRef = 5FF86A191B3A293300316A0F /* Leverage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,7 +90,6 @@
 		5F0639541B327E3A00277871 /* cellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cellView.swift; sourceTree = "<group>"; };
 		5F1FADFA1B33964F00F4EF78 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		5F1FADFC1B33C6A100F4EF78 /* settings-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "settings-icon.png"; path = "../../../Desktop/GRAPHICS/settings-icon.png"; sourceTree = "<group>"; };
-		5FF86A191B3A293300316A0F /* Leverage */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Leverage; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,7 +133,6 @@
 			children = (
 				5F0639041B323F4C00277871 /* AppDelegate.swift */,
 				5F0639061B323F4C00277871 /* ViewController.swift */,
-				5FF86A191B3A293300316A0F /* Leverage */,
 				5F1FADFA1B33964F00F4EF78 /* SettingsViewController.swift */,
 				5F0639521B327CD000277871 /* job.swift */,
 				5F06394C1B3241B900277871 /* DetailViewController.swift */,
@@ -280,7 +277,6 @@
 				5F0639491B32404F00277871 /* leverage-launch-logo.png in Resources */,
 				5F0639421B323F8E00277871 /* Icon-Small.png in Resources */,
 				5F0639381B323F8E00277871 /* Icon-60@3x.png in Resources */,
-				5FF86A1A1B3A293300316A0F /* Leverage in Resources */,
 				5F0639401B323F8E00277871 /* Icon-Small-50.png in Resources */,
 				5F06393E1B323F8E00277871 /* Icon-Small-40@2x.png in Resources */,
 				5F0639431B323F8E00277871 /* Icon-Small@2x.png in Resources */,
