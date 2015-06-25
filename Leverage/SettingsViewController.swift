@@ -31,9 +31,15 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    }
+    
+    override func viewWillAppear(animated: Bool) {
         applyButton.layer.cornerRadius = 3
         applyButton.contentEdgeInsets = UIEdgeInsets(top: 9, left: 15, bottom: 9, right: 15)
-        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+
     }
     
     override func didReceiveMemoryWarning() {

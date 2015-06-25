@@ -18,26 +18,30 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     @IBOutlet weak var jobsList: UITableView!
-    @IBAction func settingsButton(sender: AnyObject) {}
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib
-        let userDefaults = NSUserDefaults.standardUserDefaults();
-        let lever_url:String = userDefaults.valueForKey("lever_url") as! String
-        let lever_api_key:String = userDefaults.valueForKey("lever_api_key") as! String
+        
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        let userDefaults = NSUserDefaults.standardUserDefaults();
+        
+        let lever_url:String = userDefaults.valueForKey("lever_url") as! String
+        let lever_api_key:String = userDefaults.valueForKey("lever_api_key") as! String
+        
         startConnection();
+    }
+    
+    override func viewDidAppear(animated: Bool) {
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
-    
+        
     func startConnection(){
         
         var url: NSURL = NSURL(string: self.urlPath)!
@@ -65,8 +69,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             self.items.append(job)
             
         }
-        
-        
+    
         //self.jobsList.registerClass(cellView.self, forCellReuseIdentifier: "cell")
         self.jobsList!.reloadData()
     }
