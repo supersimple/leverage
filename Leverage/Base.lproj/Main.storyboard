@@ -206,13 +206,12 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="N2M-3v-LiO" id="7EQ-Yf-MDy">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iTX-cN-jvh" userLabel="cellButton">
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iTX-cN-jvh" userLabel="cellButton" customClass="DetailButton" customModule="Leverage" customModuleProvider="target">
                                                     <rect key="frame" x="432" y="23" width="141" height="30"/>
                                                     <color key="backgroundColor" red="0.0" green="0.63137254899999995" blue="0.86274509799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
                                                     <state key="normal" title="SEE DETAILS">
                                                         <color key="titleColor" red="0.97319775549999998" green="1" blue="0.99019125379999995" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
                                                         <segue destination="cu6-Vi-uuB" kind="showDetail" identifier="showJobDetail" id="p03-eC-fSc"/>

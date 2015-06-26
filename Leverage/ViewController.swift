@@ -15,6 +15,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var api_key_value: String = "";
     var items = [Job]()
     var urlPath: String = "https://api.lever.co/v0/postings/masteryconnect?mode=json"
+    var selected_job_guid: String = "";
     
     
     @IBOutlet weak var jobsList: UITableView!
@@ -83,6 +84,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         cell.cellJob.text = self.items[indexPath.row].text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) as String
         cell.cellLocation.text = self.items[indexPath.row].categories["location"] as? String
+        cell.cellButton.stored_guid = self.items[indexPath.row].uuid as! String
         //zebra table
         if(indexPath.row % 2 > 0){
             cell.backgroundColor = UIColor(red: 0.975, green: 0.975, blue: 0.975, alpha: 1)
@@ -100,7 +102,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "showJobDetail") {
             // pass data to next view
-            println()
+            
         }
     }
     

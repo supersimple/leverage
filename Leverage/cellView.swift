@@ -11,7 +11,7 @@ import UIKit
 class cellView: UITableViewCell {
     @IBOutlet weak var cellJob: UILabel!
     @IBOutlet weak var cellLocation: UILabel!
-    @IBOutlet weak var cellButton: UIButton!
+    @IBOutlet weak var cellButton: DetailButton!
     
     
     override func awakeFromNib() {
@@ -24,7 +24,6 @@ class cellView: UITableViewCell {
     
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
         // Configure the view for the selected state
     }
     
