@@ -14,11 +14,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var guid_value: String = "";
     var api_key_value: String = "";
     var items = [Job]()
-    var urlPath: String = "https://api.lever.co/v0/postings/masteryconnect?mode=json"
+    let urlPath: String = "https://api.lever.co/v0/postings/"
+    let responseMode = "json"
     var selected_job_guid: String = "";
+    var request_path: String = ""
+    var lever_url: String = ""
+    var lever_api_key: String = ""
     
     
     @IBOutlet weak var jobsList: UITableView!
+    @IBAction func showDetailView(sender: DetailButton) {
+        self.selected_job_guid = sender.stored_guid as String
+        //show the detail view
+        self.performSegueWithIdentifier("showJobDetail", sender: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,8 +39,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewWillAppear(animated)
         let userDefaults = NSUserDefaults.standardUserDefaults();
         
-        let lever_url:String = userDefaults.valueForKey("lever_url") as! String
-        let lever_api_key:String = userDefaults.valueForKey("lever_api_key") as! String
+        self.lever_url = userDefaults.valueForKey("lever_url") as! String
+        self.lever_api_key = userDefaults.valueForKey("lever_api_key") as! String
+        self.request_path = self.urlPath + self.lever_url + "?mode=" + self.responseMode;
         
         startConnection();
     }
@@ -45,7 +55,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     func startConnection(){
         
-        var url: NSURL = NSURL(string: self.urlPath)!
+        var url: NSURL = NSURL(string: self.request_path)!
         var request: NSURLRequest = NSURLRequest(URL: url)
         var connection: NSURLConnection = NSURLConnection(request: request, delegate: self, startImmediately: false)!
         connection.start()
@@ -94,15 +104,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         return cell
     }
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        println("You selected cell #\(indexPath.row)!")
-    }
-    
+
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "showJobDetail") {
             // pass data to next view
-            
+            //https://api.lever.co/v0/postings/masteryconnect/5721843f-8dd3-41e8-bfec-045c7c522cad
+            let detailViewController = segue.destinationViewController as! DetailViewController
+            detailViewController.description_url = self.urlPath + self.lever_url + "/" + self.selected_job_guid
         }
     }
     

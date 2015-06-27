@@ -30,6 +30,7 @@
             <string>Lato-Regular</string>
             <string>Lato-Regular</string>
             <string>Lato-Regular</string>
+            <string>Lato-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -214,7 +215,7 @@
                                                         <color key="titleColor" red="0.97319775549999998" green="1" blue="0.99019125379999995" alpha="1" colorSpace="calibratedRGB"/>
                                                     </state>
                                                     <connections>
-                                                        <segue destination="cu6-Vi-uuB" kind="showDetail" identifier="showJobDetail" id="p03-eC-fSc"/>
+                                                        <action selector="showDetailView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MQm-3C-sS4"/>
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qgS-al-ZLW">
@@ -263,6 +264,7 @@
                     </view>
                     <connections>
                         <outlet property="jobsList" destination="m8p-ez-Kj7" id="a7L-QM-mTQ"/>
+                        <segue destination="cu6-Vi-uuB" kind="show" identifier="showJobDetail" id="Z7X-9D-6Jz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -318,21 +320,48 @@
                                     <segue destination="XDx-s5-Phf" kind="showDetail" identifier="showJobForm" id="VuC-6O-KUt"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Qm-m1-4fe">
+                                <rect key="frame" x="16" y="156" width="568" height="57"/>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="18"/>
+                                <color key="textColor" red="0.27494626319999999" green="0.27494626319999999" blue="0.27494626319999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="60" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UuJ-X3-fd5">
+                                <rect key="frame" x="16" y="231" width="568" height="306"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Label">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacingBefore="5"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="mQG-l5-aqY" firstAttribute="top" secondItem="ulw-5X-TXk" secondAttribute="bottom" constant="-20" id="6Vp-kv-U8k"/>
                             <constraint firstItem="zxD-c1-XMW" firstAttribute="top" secondItem="mQG-l5-aqY" secondAttribute="bottom" constant="10" id="7EN-Lz-2nt"/>
+                            <constraint firstItem="2Qm-m1-4fe" firstAttribute="trailing" secondItem="3Kn-iH-kCA" secondAttribute="trailingMargin" id="Ekh-bd-IaE"/>
+                            <constraint firstItem="UuJ-X3-fd5" firstAttribute="trailing" secondItem="3Kn-iH-kCA" secondAttribute="trailingMargin" id="JpI-2U-VzU"/>
+                            <constraint firstItem="UuJ-X3-fd5" firstAttribute="leading" secondItem="3Kn-iH-kCA" secondAttribute="leadingMargin" id="W1p-FU-HLa"/>
                             <constraint firstItem="zxD-c1-XMW" firstAttribute="trailing" secondItem="3Kn-iH-kCA" secondAttribute="trailingMargin" constant="10" id="Wv8-iu-kfU"/>
                             <constraint firstItem="G19-h2-Q4m" firstAttribute="leading" secondItem="3Kn-iH-kCA" secondAttribute="leadingMargin" constant="-10" id="XrU-hk-KCM"/>
                             <constraint firstItem="mQG-l5-aqY" firstAttribute="width" secondItem="3Kn-iH-kCA" secondAttribute="width" id="bku-FY-aYu"/>
+                            <constraint firstItem="9Pt-YE-OIw" firstAttribute="top" secondItem="UuJ-X3-fd5" secondAttribute="bottom" constant="60" id="lYi-h5-7Qo"/>
+                            <constraint firstItem="2Qm-m1-4fe" firstAttribute="leading" secondItem="3Kn-iH-kCA" secondAttribute="leadingMargin" id="sai-Vw-08r"/>
                             <constraint firstItem="mQG-l5-aqY" firstAttribute="leading" secondItem="3Kn-iH-kCA" secondAttribute="leadingMargin" constant="-20" id="say-Iw-oea"/>
+                            <constraint firstItem="UuJ-X3-fd5" firstAttribute="top" secondItem="2Qm-m1-4fe" secondAttribute="bottom" constant="10" id="t0j-2h-T4X"/>
                             <constraint firstItem="G19-h2-Q4m" firstAttribute="top" secondItem="mQG-l5-aqY" secondAttribute="bottom" constant="10" id="tG1-nl-oiz"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="applyButton" destination="zxD-c1-XMW" id="Awj-yL-Zbl"/>
                         <outlet property="backToList" destination="G19-h2-Q4m" id="m6w-3v-Lyz"/>
+                        <outlet property="job_desc" destination="UuJ-X3-fd5" id="iV9-Wa-0bF"/>
+                        <outlet property="job_title" destination="2Qm-m1-4fe" id="69V-FK-NhZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gvy-Rz-qAs" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -399,6 +428,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="p03-eC-fSc"/>
+        <segue reference="Z7X-9D-6Jz"/>
     </inferredMetricsTieBreakers>
 </document>
