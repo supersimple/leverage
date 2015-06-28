@@ -49,6 +49,8 @@ class DetailViewController: UIViewController {
             }
             var err: NSError?
             
+            
+            
             var jsonResult = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &err) as! NSDictionary
             if(err != nil) {
                 // If there is an error parsing JSON, print it to the console
