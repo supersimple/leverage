@@ -13,6 +13,8 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var backToList: UIButton!
     @IBOutlet weak var applyButton: UIButton!
     
+    @IBOutlet weak var scroll_view: UIScrollView!
+    
     @IBOutlet weak var job_title: UILabel!
     @IBOutlet weak var job_desc: UILabel!
     
@@ -88,6 +90,10 @@ class DetailViewController: UIViewController {
         job_desc.text = job_description as String;
         (job_desc.attributedText as! NSMutableAttributedString).appendAttributedString(NSMutableAttributedString(attributedString: job_details));
         
+        job_desc.font = UIFont(name: "Lato Hairline", size: 18.0)
+        job_desc.numberOfLines = 0;
+        job_desc.sizeToFit();
+        scroll_view.contentSize = job_desc.frame.size
     }
     
     
