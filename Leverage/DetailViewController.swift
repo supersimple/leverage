@@ -18,11 +18,21 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var job_title: UILabel!
     @IBOutlet weak var job_desc: UILabel!
     
+    let urlPath: String = "https://api.lever.co/v0/postings/"
+    let responseMode = "json"
+    var selected_job_guid: String = "";
+    var request_path: String = ""
+    var lever_url: String = ""
+    var lever_api_key: String = ""
     var description_url: String = ""; //passed in via segue
+    
     var job_text: NSString = "";
     var job_description: NSString = "";
     var job_lists: NSArray = [];
     var job_details = NSMutableAttributedString(string:"");
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +43,16 @@ class DetailViewController: UIViewController {
         applyButton.contentEdgeInsets = UIEdgeInsets(top: 9, left: 15, bottom: 9, right: 15)
         
         self.loadPage();
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        let userDefaults = NSUserDefaults.standardUserDefaults();
+        
+        self.lever_url = userDefaults.valueForKey("lever_url") as! String
+        self.lever_api_key = userDefaults.valueForKey("lever_api_key") as! String
+        self.request_path = self.urlPath + self.lever_url + "?mode=" + self.responseMode;
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -96,6 +116,14 @@ class DetailViewController: UIViewController {
         scroll_view.contentSize = job_desc.frame.size
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if (segue.identifier == "showJobForm") {
+            // pass data to next view
+            //https://api.lever.co/v0/postings/masteryconnect/5721843f-8dd3-41e8-bfec-045c7c522cad
+            let formViewController = segue.destinationViewController as! FormViewController
+            formViewController.description_url = self.urlPath + self.lever_url + "/" + self.selected_job_guid
+        }
+    }
     
 }
 

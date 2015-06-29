@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     lazy var data = NSMutableData()
 
+    
     var guid_value: String = "";
     var api_key_value: String = "";
     var items = [Job]()
