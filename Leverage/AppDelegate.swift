@@ -16,12 +16,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        let userDefaults = NSUserDefaults.standardUserDefaults();
+        var lever_url = userDefaults.valueForKey("lever_url") as! String
+        
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         var mainViewController: ViewController = mainStoryboard.instantiateViewControllerWithIdentifier("ViewController") as! ViewController
         var settingsViewController: SettingsViewController = mainStoryboard.instantiateViewControllerWithIdentifier("SettingsViewController") as! SettingsViewController
-        self.window?.rootViewController = settingsViewController
+        if(lever_url == ""){
+            self.window?.rootViewController = settingsViewController
+        }else{
+            self.window?.rootViewController = mainViewController
+        }
         self.window?.makeKeyAndVisible()
+        
         
         return true
     }

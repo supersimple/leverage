@@ -34,18 +34,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib
-        var settings_prepared: Bool = checkSettings();
+    
+        self.lever_url = parseLeverUrl(self.userDefaults.valueForKey("lever_url") as! String) as String
+        self.lever_api_key = self.userDefaults.valueForKey("lever_api_key") as! String
+        self.request_path = self.urlPath + self.lever_url + "?mode=" + self.responseMode;
         
-        if (settings_prepared){
-            println("ready to go")
-            self.lever_url = self.userDefaults.valueForKey("lever_url") as! String
-            self.lever_api_key = self.userDefaults.valueForKey("lever_api_key") as! String
-            self.request_path = self.urlPath + self.lever_url + "?mode=" + self.responseMode;
-            
-            startConnection();
-        }else{
-            redirectToSettings();
-        }
+        startConnection();
         
     }
     
@@ -62,6 +56,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func checkSettings() -> Bool{
         return false
+    }
+    
+    func parseLeverUrl(str: String) -> String {
+        var arr = str.componentsSeparatedByString("/");
+        return arr.last!
     }
     
     func redirectToSettings(){
