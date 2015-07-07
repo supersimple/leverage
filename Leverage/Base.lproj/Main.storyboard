@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -36,7 +36,7 @@
         <!--Settings View Controller-->
         <scene sceneID="nSs-Km-QoS">
             <objects>
-                <viewController id="kfp-ke-S3e" customClass="SettingsViewController" customModule="Leverage" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsViewController" id="kfp-ke-S3e" customClass="SettingsViewController" customModule="Leverage" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VvY-5Z-tdp"/>
                         <viewControllerLayoutGuide type="bottom" id="LVy-6Y-xXg"/>
@@ -169,7 +169,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Leverage" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="Leverage" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -264,11 +264,12 @@
                     <connections>
                         <outlet property="jobsList" destination="m8p-ez-Kj7" id="a7L-QM-mTQ"/>
                         <segue destination="cu6-Vi-uuB" kind="show" identifier="showJobDetail" id="Z7X-9D-6Jz"/>
+                        <segue destination="kfp-ke-S3e" kind="show" identifier="showSettings" id="FQA-GA-9AC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="284" y="372"/>
+            <point key="canvasLocation" x="238" y="226"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="FJk-96-D9j">

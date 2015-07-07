@@ -21,6 +21,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var request_path: String = ""
     var lever_url: String = ""
     var lever_api_key: String = ""
+    let userDefaults = NSUserDefaults.standardUserDefaults();
     
     
     @IBOutlet weak var jobsList: UITableView!
@@ -33,18 +34,23 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib
+        var settings_prepared: Bool = checkSettings();
+        
+        if (settings_prepared){
+            println("ready to go")
+            self.lever_url = self.userDefaults.valueForKey("lever_url") as! String
+            self.lever_api_key = self.userDefaults.valueForKey("lever_api_key") as! String
+            self.request_path = self.urlPath + self.lever_url + "?mode=" + self.responseMode;
+            
+            startConnection();
+        }else{
+            redirectToSettings();
+        }
         
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        let userDefaults = NSUserDefaults.standardUserDefaults();
-        
-        self.lever_url = userDefaults.valueForKey("lever_url") as! String
-        self.lever_api_key = userDefaults.valueForKey("lever_api_key") as! String
-        self.request_path = self.urlPath + self.lever_url + "?mode=" + self.responseMode;
-        
-        startConnection();
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -53,7 +59,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-        
+    
+    func checkSettings() -> Bool{
+        return false
+    }
+    
+    func redirectToSettings(){
+        //redirect to setting view conroller
+        self.performSegueWithIdentifier("showSettings", sender: nil)
+    }
+    
     func startConnection(){
         
         var url: NSURL = NSURL(string: self.request_path)!

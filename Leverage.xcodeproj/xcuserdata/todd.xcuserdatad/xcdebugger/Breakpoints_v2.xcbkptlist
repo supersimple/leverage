@@ -26,12 +26,12 @@
                   moduleName = "Leverage"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/todd/Sandbox/Leverage/Leverage/FormViewController.swift"
-                  timestampString = "457243898.505166"
+                  timestampString = "457934075.52108"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
                   endingLineNumber = "0"
-                  offsetFromSymbolStart = "39">
+                  offsetFromSymbolStart = "24">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -41,12 +41,12 @@
                   moduleName = "Leverage"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/todd/Sandbox/Leverage/Leverage/FormViewController.swift"
-                  timestampString = "457243898.505271"
+                  timestampString = "457934075.52121"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
                   endingLineNumber = "0"
-                  offsetFromSymbolStart = "28">
+                  offsetFromSymbolStart = "16">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -56,12 +56,12 @@
                   moduleName = "Leverage"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/todd/Sandbox/Leverage/Leverage/FormViewController.swift"
-                  timestampString = "457243898.505378"
+                  timestampString = "457934075.521304"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "21"
                   endingLineNumber = "21"
-                  offsetFromSymbolStart = "447">
+                  offsetFromSymbolStart = "490">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -71,12 +71,12 @@
                   moduleName = "Leverage"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/todd/Sandbox/Leverage/Leverage/FormViewController.swift"
-                  timestampString = "457243898.505499"
+                  timestampString = "457934075.521407"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "21"
                   endingLineNumber = "21"
-                  offsetFromSymbolStart = "749">
+                  offsetFromSymbolStart = "406">
                </Location>
             </Locations>
          </BreakpointContent>
