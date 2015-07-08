@@ -28,17 +28,26 @@ class FormViewController: UIViewController {
 
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        let userDefaults = NSUserDefaults.standardUserDefaults();
+        
+        self.lever_url = userDefaults.valueForKey("lever_url") as! String
+        self.lever_api_key = userDefaults.valueForKey("lever_api_key") as! String
+        self.request_path = self.urlPath + self.lever_url + "?mode=" + self.responseMode;
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        if (segue.identifier == "showJobDetail") {
-            // pass data to next view
-            //https://api.lever.co/v0/postings/masteryconnect/5721843f-8dd3-41e8-bfec-045c7c522cad
+        if (segue.identifier == "backToJobDetail") {
             let detailViewController = segue.destinationViewController as! DetailViewController
-            detailViewController.description_url = self.urlPath + self.lever_url + "/" + self.selected_job_guid
+            detailViewController.selected_job_guid = self.selected_job_guid;
+            detailViewController.description_url = self.description_url;
         }
     }
     

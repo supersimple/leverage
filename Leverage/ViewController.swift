@@ -54,10 +54,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.didReceiveMemoryWarning()
     }
     
-    func checkSettings() -> Bool{
-        return false
-    }
-    
     func parseLeverUrl(str: String) -> String {
         var arr = str.componentsSeparatedByString("/");
         return arr.last!
@@ -125,6 +121,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             // pass data to next view
             //https://api.lever.co/v0/postings/masteryconnect/5721843f-8dd3-41e8-bfec-045c7c522cad
             let detailViewController = segue.destinationViewController as! DetailViewController
+            detailViewController.selected_job_guid = self.selected_job_guid;
             detailViewController.description_url = self.urlPath + self.lever_url + "/" + self.selected_job_guid
         }
     }

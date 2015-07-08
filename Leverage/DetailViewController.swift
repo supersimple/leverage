@@ -63,6 +63,7 @@ class DetailViewController: UIViewController {
     private func loadPage() {
         let url = NSURL(string: description_url)
         let session = NSURLSession.sharedSession()
+        println(url);
         let task = session.dataTaskWithURL(url!, completionHandler: {data, response, error -> Void in
             println("Task completed")
             if(error != nil) {
@@ -105,6 +106,11 @@ class DetailViewController: UIViewController {
         
     }
     
+    func parseLeverUrl(str: String) -> String {
+        var arr = str.componentsSeparatedByString("/");
+        return arr.last!
+    }
+    
     internal func completeViewText(){
         job_title.text = job_text as? String;
         job_desc.text = job_description as String;
@@ -121,7 +127,11 @@ class DetailViewController: UIViewController {
             // pass data to next view
             //https://api.lever.co/v0/postings/masteryconnect/5721843f-8dd3-41e8-bfec-045c7c522cad
             let formViewController = segue.destinationViewController as! FormViewController
-            formViewController.description_url = self.urlPath + self.lever_url + "/" + self.selected_job_guid
+            formViewController.selected_job_guid = self.selected_job_guid;
+            
+            
+            
+            formViewController.description_url = self.urlPath + parseLeverUrl(self.lever_url) as String + "/" + self.selected_job_guid
         }
     }
     
