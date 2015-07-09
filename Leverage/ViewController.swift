@@ -24,6 +24,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     let userDefaults = NSUserDefaults.standardUserDefaults();
     
     
+    @IBOutlet weak var activity: UIActivityIndicatorView!
     @IBOutlet weak var jobsList: UITableView!
     @IBAction func showDetailView(sender: DetailButton) {
         self.selected_job_guid = sender.stored_guid as String
@@ -33,6 +34,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        activity.startAnimating();
         // Do any additional setup after loading the view, typically from a nib
     
         self.lever_url = parseLeverUrl(self.userDefaults.valueForKey("lever_url") as! String) as String
@@ -48,6 +50,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     override func viewDidAppear(animated: Bool) {
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -91,7 +94,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             self.items.append(job)
             
         }
-    
+        activity.stopAnimating();
         //self.jobsList.registerClass(cellView.self, forCellReuseIdentifier: "cell")
         self.jobsList!.reloadData()
     }
