@@ -21,9 +21,10 @@ class SettingsViewController: UIViewController {
         //save the settings to userDefaults
         userDefaults.setObject(guidField.text, forKey: "lever_url")
         userDefaults.setObject(apikeyField.text, forKey: "lever_api_key")
-        userDefaults.setObject(showLocation.on, forKey: "show_location")
-        userDefaults.setObject(showTeam.on, forKey: "show_team")
-        userDefaults.setObject(showCommitment.on, forKey: "show_commitment")
+        userDefaults.setObject(showLocation.on, forKey: "list_location")
+        userDefaults.setObject(showTeam.on, forKey: "list_team")
+        userDefaults.setObject(showCommitment.on, forKey: "list_commitment")
+        self.performSegueWithIdentifier("showInitialJobsList", sender: nil)
     }
     
     let userDefaults = NSUserDefaults.standardUserDefaults();

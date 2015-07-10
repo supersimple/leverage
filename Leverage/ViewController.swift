@@ -22,6 +22,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var lever_url: String = ""
     var lever_api_key: String = ""
     let userDefaults = NSUserDefaults.standardUserDefaults();
+    var list_location: Bool = true
+    var list_team: Bool = true
+    var list_commitment: Bool = true
     
     
     @IBOutlet weak var activity: UIActivityIndicatorView!
@@ -40,6 +43,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.lever_url = parseLeverUrl(self.userDefaults.valueForKey("lever_url") as! String) as String
         self.lever_api_key = self.userDefaults.valueForKey("lever_api_key") as! String
         self.request_path = self.urlPath + self.lever_url + "?mode=" + self.responseMode;
+        self.list_location = (self.userDefaults.valueForKey("list_location") as? Bool)!
+        self.list_team = (self.userDefaults.valueForKey("list_team") as? Bool)!
+        self.list_commitment = (self.userDefaults.valueForKey("list_commitment") as? Bool)!
         
         startConnection();
         
@@ -108,6 +114,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         cell.cellJob.text = self.items[indexPath.row].text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) as String
         cell.cellLocation.text = self.items[indexPath.row].categories["location"] as? String
+        // Need to add meta from settings
+        // list_location, list_team, list_commitment
+        
+        
         cell.cellButton.stored_guid = self.items[indexPath.row].uuid as! String
         //zebra table
         if(indexPath.row % 2 > 0){

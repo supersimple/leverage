@@ -104,9 +104,6 @@
                                     </view>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hj4-gK-buw">
                                         <rect key="frame" x="229" y="250" width="51" height="31"/>
-                                        <connections>
-                                            <action selector="showLocation:" destination="kfp-ke-S3e" eventType="valueChanged" id="TvD-bX-Ceg"/>
-                                        </connections>
                                     </switch>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Show Location in List View" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFE-Wc-vVg">
                                         <rect key="frame" x="11" y="255" width="157" height="21"/>
@@ -160,11 +157,12 @@
                         <outlet property="showCommitment" destination="kFB-Dx-W10" id="nad-Q8-lDW"/>
                         <outlet property="showLocation" destination="Hj4-gK-buw" id="qXO-Ed-Uvx"/>
                         <outlet property="showTeam" destination="TZi-L4-rfq" id="C0p-iq-iHE"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="showInitialJobsList" id="oXH-oa-oLL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xt7-ds-5MK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-467" y="53"/>
+            <point key="canvasLocation" x="-643" y="249"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -441,5 +439,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="Z7X-9D-6Jz"/>
+        <segue reference="oXH-oa-oLL"/>
     </inferredMetricsTieBreakers>
 </document>
