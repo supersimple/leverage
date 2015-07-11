@@ -19,6 +19,14 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var applyButton: UIButton!
     @IBAction func applyButton(sender: AnyObject) {
         //save the settings to userDefaults
+        
+        if(guidField.text.isEmpty){
+            guidField.text = self.defaultGuid;
+        }
+        if(apikeyField.text.isEmpty){
+            apikeyField.text = self.defaultApi;
+        }
+        
         userDefaults.setObject(guidField.text, forKey: "lever_url")
         userDefaults.setObject(apikeyField.text, forKey: "lever_api_key")
         userDefaults.setObject(showLocation.on, forKey: "list_location")
@@ -28,6 +36,8 @@ class SettingsViewController: UIViewController {
     }
     
     let userDefaults = NSUserDefaults.standardUserDefaults();
+    let defaultGuid: String = "leverdemo";
+    let defaultApi: String = "5ac21346-8e0c-4494-8e7a-3eb92ff77902"
     
     override func viewDidLoad() {
         super.viewDidLoad()

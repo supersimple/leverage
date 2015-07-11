@@ -116,6 +116,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.cellLocation.text = self.items[indexPath.row].categories["location"] as? String
         // Need to add meta from settings
         // list_location, list_team, list_commitment
+        cell.cellLocation.text = prepareStringForConcat(checkForNil(self.items[indexPath.row].categories, k: "location") as String!, display: self.list_location) +
+            prepareStringForConcat(checkForNil(self.items[indexPath.row].categories,k: "team") as String!, display: self.list_team) +
+            prepareStringForConcat(checkForNil(self.items[indexPath.row].categories,k: "commitment") as String!, display: self.list_commitment)
         
         
         cell.cellButton.stored_guid = self.items[indexPath.row].uuid as! String
@@ -128,7 +131,28 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         return cell
     }
-
+    
+    private func checkForNil(dict: NSDictionary, k: String) -> String{
+        if let tmp: AnyObject = dict[k]{
+            return dict[k] as! String
+        }else{
+            return ""
+        }
+    }
+    
+    private func prepareStringForConcat(str: String, display: Bool) -> String{
+        if(display){
+            if((str as AnyObject!) == nil){
+                return ""
+            }else if((str as String).isEmpty){
+                return ""
+            }else{
+                return (str as String) + "   "
+            }
+        }
+        return ""
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "showJobDetail") {
             // pass data to next view
