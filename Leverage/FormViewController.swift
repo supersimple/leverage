@@ -20,12 +20,35 @@ class FormViewController: UIViewController {
     var lever_url: String = ""
     var lever_api_key: String = ""
     
+    @IBOutlet weak var fullnameField: UITextField!
+    @IBOutlet weak var emailField: UITextField!
+    @IBOutlet weak var phonenumberField: UITextField!
+    @IBOutlet weak var resumeField: UITextField!
+    @IBOutlet weak var commentsField: UITextView!
+    
+    @IBOutlet weak var applyButton: UIButton!
+    @IBAction func applyButton(sender: AnyObject) {
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         backToDetailButton.layer.cornerRadius = 3
         backToDetailButton.contentEdgeInsets = UIEdgeInsets(top: 9, left: 15, bottom: 9, right: 15)
-
+        applyButton.layer.cornerRadius = 3
+        applyButton.contentEdgeInsets = UIEdgeInsets(top: 9, left: 15, bottom: 9, right: 15)
+        applyBorders(fullnameField);
+        applyBorders(emailField);
+        applyBorders(phonenumberField);
+        applyBorders(resumeField);
+        applyBorders(commentsField);
+    }
+    
+    private func applyBorders(btn: AnyObject){
+        btn.layer.cornerRadius = 3.0
+        btn.layer.masksToBounds = true
+        btn.layer.borderColor = UIColor( red: 200/255, green: 200/255, blue:200/255, alpha: 1.0 ).CGColor
+        btn.layer.borderWidth = 1.0
     }
     
     override func viewWillAppear(animated: Bool) {
