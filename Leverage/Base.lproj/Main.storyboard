@@ -495,16 +495,16 @@
             </objects>
             <point key="canvasLocation" x="2284" y="353"/>
         </scene>
-        <!--View Controller-->
+        <!--Thank You Controller-->
         <scene sceneID="QXi-wO-KXc">
             <objects>
-                <viewController id="kj8-R1-KgL" sceneMemberID="viewController">
+                <viewController id="kj8-R1-KgL" customClass="ThankYouController" customModule="Leverage" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Lhj-S6-OhU">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thank You!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0f7-WD-20e">
-                                <rect key="frame" x="16" y="463" width="736" height="97"/>
+                                <rect key="frame" x="16" y="220" width="736" height="97"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="64"/>
                                 <color key="textColor" red="0.26827050260000002" green="0.26827050260000002" blue="0.26827050260000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -527,14 +527,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sorry." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Gdz-O3-wmN">
-                                <rect key="frame" x="16" y="347" width="736" height="97"/>
+                                <rect key="frame" x="16" y="222" width="736" height="97"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="44"/>
                                 <color key="textColor" red="0.26827050260000002" green="0.26827050260000002" blue="0.26827050260000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0dm-jq-4bw">
-                                <rect key="frame" x="16" y="401" width="736" height="128"/>
+                                <rect key="frame" x="16" y="276" width="736" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <string key="text">There was an error while sending your application.
 Please try again.</string>
@@ -557,7 +557,7 @@ Please try again.</string>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="eAp-HS-WBU"/>
+        <segue reference="Z7X-9D-6Jz"/>
         <segue reference="0u4-eR-FXh"/>
     </inferredMetricsTieBreakers>
 </document>

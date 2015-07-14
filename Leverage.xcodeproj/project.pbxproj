@@ -41,6 +41,7 @@
 		5F16D87B1B3D128800B7A62C /* detailButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F16D87A1B3D128800B7A62C /* detailButton.swift */; };
 		5F1FADFB1B33964F00F4EF78 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1FADFA1B33964F00F4EF78 /* SettingsViewController.swift */; };
 		5F1FADFD1B33C6A100F4EF78 /* settings-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F1FADFC1B33C6A100F4EF78 /* settings-icon.png */; };
+		5FFECAD81B54BE1D000D510A /* ThankYouController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFECAD71B54BE1D000D510A /* ThankYouController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,7 @@
 		5F16D87A1B3D128800B7A62C /* detailButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = detailButton.swift; sourceTree = "<group>"; };
 		5F1FADFA1B33964F00F4EF78 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		5F1FADFC1B33C6A100F4EF78 /* settings-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "settings-icon.png"; path = "../../../Desktop/GRAPHICS/settings-icon.png"; sourceTree = "<group>"; };
+		5FFECAD71B54BE1D000D510A /* ThankYouController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThankYouController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 				5F0639521B327CD000277871 /* job.swift */,
 				5F16D87A1B3D128800B7A62C /* detailButton.swift */,
 				5F06394C1B3241B900277871 /* DetailViewController.swift */,
+				5FFECAD71B54BE1D000D510A /* ThankYouController.swift */,
 				5F06394E1B3241F600277871 /* FormViewController.swift */,
 				5F0639081B323F4C00277871 /* Main.storyboard */,
 				5F0639541B327E3A00277871 /* cellView.swift */,
@@ -320,6 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F06394D1B3241B900277871 /* DetailViewController.swift in Sources */,
+				5FFECAD81B54BE1D000D510A /* ThankYouController.swift in Sources */,
 				5F0639071B323F4C00277871 /* ViewController.swift in Sources */,
 				5F1FADFB1B33964F00F4EF78 /* SettingsViewController.swift in Sources */,
 				5F0639531B327CD000277871 /* job.swift in Sources */,

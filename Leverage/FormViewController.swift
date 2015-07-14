@@ -51,6 +51,10 @@ class FormViewController: UIViewController {
         applyBorders(commentsField);
     }
     
+    func update() {
+        self.performSegueWithIdentifier("errorSegue", sender: nil)
+    }
+    
     private func applyBorders(btn: AnyObject){
         btn.layer.cornerRadius = 3.0
         btn.layer.masksToBounds = true
