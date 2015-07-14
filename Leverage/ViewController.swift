@@ -35,14 +35,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         //show the detail view
         self.performSegueWithIdentifier("showJobDetail", sender: nil)
     }
+    @IBOutlet weak var goToSettingsButton: UIButton!
+    @IBAction func goToSettingsButton(sender: AnyObject) {
+        redirectToSettings()
+    }
+    @IBOutlet weak var goToSettings: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         activity.startAnimating();
         // Do any additional setup after loading the view, typically from a nib
-        settingsWarning.layer.cornerRadius = 3
-        settingsWarning.layer.borderColor = UIColor( red: 66/255, green: 66/255, blue:66/255, alpha: 0.66 ).CGColor
-        settingsWarning.layer.borderWidth = 6.0
         
         self.lever_url = parseLeverUrl(self.userDefaults.valueForKey("lever_url") as! String) as String
         self.lever_api_key = self.userDefaults.valueForKey("lever_api_key") as! String
@@ -52,6 +54,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.list_commitment = (self.userDefaults.valueForKey("list_commitment") as? Bool)!
         
         startConnection();
+        
+        if(self.lever_url == "leverdemo"){
+            settingsWarning.layer.cornerRadius = 3
+            settingsWarning.layer.borderColor = UIColor( red: 66/255, green: 66/255, blue:66/255, alpha: 0.9 ).CGColor
+            settingsWarning.layer.borderWidth = 1.0
+            
+            goToSettingsButton.layer.cornerRadius = 3
+            goToSettingsButton.contentEdgeInsets = UIEdgeInsets(top: 9, left: 15, bottom: 9, right: 15)
+            settingsWarning.hidden = false
+        }else{
+            //hide the modal warning
+            settingsWarning.hidden = true
+        }
         
     }
     
