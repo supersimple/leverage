@@ -28,6 +28,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     @IBOutlet weak var activity: UIActivityIndicatorView!
+    @IBOutlet weak var settingsWarning: UIView!
     @IBOutlet weak var jobsList: UITableView!
     @IBAction func showDetailView(sender: DetailButton) {
         self.selected_job_guid = sender.stored_guid as String
@@ -39,7 +40,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         activity.startAnimating();
         // Do any additional setup after loading the view, typically from a nib
-    
+        settingsWarning.layer.cornerRadius = 3
+        settingsWarning.layer.borderColor = UIColor( red: 66/255, green: 66/255, blue:66/255, alpha: 0.66 ).CGColor
+        settingsWarning.layer.borderWidth = 6.0
+        
         self.lever_url = parseLeverUrl(self.userDefaults.valueForKey("lever_url") as! String) as String
         self.lever_api_key = self.userDefaults.valueForKey("lever_api_key") as! String
         self.request_path = self.urlPath + self.lever_url + "?mode=" + self.responseMode;

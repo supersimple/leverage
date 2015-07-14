@@ -87,34 +87,33 @@ class FormViewController: UIViewController {
     
     private func sendFormData(full_name_value: NSString, email_address_value: NSString, phone_number_value: NSString, resume_value: NSString, comments_value: NSString) {
         // create the request & response
-        self.performSegueWithIdentifier("errorSegue", sender: nil)
-//        var request = NSMutableURLRequest(URL: NSURL(string: "https://api.lever.co/v0/postings/\(self.lever_url)/\(self.lever_api_key)")!, cachePolicy: NSURLRequestCachePolicy.ReloadIgnoringLocalCacheData, timeoutInterval: 5)
-//        var response: NSURLResponse?
-//        var error: NSError?
-//        
-//        // create some JSON data and configure the request
-//        var bodyData = "name=\(full_name_value)&email=\(email_address_value)&phone=\(phone_number_value)&urls[LinkedIn]=\(resume_value)&comments=\(comments_value)"
-//        request.HTTPBody = bodyData.dataUsingEncoding(NSUTF8StringEncoding);
-//        
-//        //        let jsonString = "json=[{\"name\":\(full_name_value),\"email\":\(email_address_value)}]"
-//        //        request.HTTPBody = jsonString.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
-//        request.HTTPMethod = "POST"
-//        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-//        println(request)
-//        
-//        // send the request
-//        NSURLConnection.sendSynchronousRequest(request, returningResponse: &response, error: &error)
-//        
-//        // look at the response
-//        if let httpResponse = response as? NSHTTPURLResponse {
-//            println("HTTP response: \(httpResponse)")
-//            //move to thank you view
-//            self.performSegueWithIdentifier("thankYouSegue", sender: nil)
-//        } else {
-//            println("No HTTP response")
-//            //move to error view
-//            self.performSegueWithIdentifier("errorSegue", sender: nil)
-//        }
+        var request = NSMutableURLRequest(URL: NSURL(string: "https://api.lever.co/v0/postings/\(self.lever_url)/\(self.lever_api_key)")!, cachePolicy: NSURLRequestCachePolicy.ReloadIgnoringLocalCacheData, timeoutInterval: 5)
+        var response: NSURLResponse?
+        var error: NSError?
+        
+        // create some JSON data and configure the request
+        var bodyData = "name=\(full_name_value)&email=\(email_address_value)&phone=\(phone_number_value)&urls[LinkedIn]=\(resume_value)&comments=\(comments_value)"
+        request.HTTPBody = bodyData.dataUsingEncoding(NSUTF8StringEncoding);
+        
+        //        let jsonString = "json=[{\"name\":\(full_name_value),\"email\":\(email_address_value)}]"
+        //        request.HTTPBody = jsonString.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
+        request.HTTPMethod = "POST"
+        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        println(request)
+        
+        // send the request
+        NSURLConnection.sendSynchronousRequest(request, returningResponse: &response, error: &error)
+        
+        // look at the response
+        if let httpResponse = response as? NSHTTPURLResponse {
+            println("HTTP response: \(httpResponse)")
+            //move to thank you view
+            self.performSegueWithIdentifier("thankYouSegue", sender: nil)
+        } else {
+            println("No HTTP response")
+            //move to error view
+            self.performSegueWithIdentifier("errorSegue", sender: nil)
+        }
     }
     
     // Convert from NSData to json object
