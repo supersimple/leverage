@@ -488,7 +488,7 @@
                         <outlet property="phonenumberField" destination="ZeR-cK-Sda" id="1ON-e1-zVg"/>
                         <outlet property="resumeField" destination="PKF-Z8-fhm" id="e4R-jM-ysC"/>
                         <segue destination="kj8-R1-KgL" kind="modal" identifier="thankYouSegue" id="ZcJ-ph-3Ew"/>
-                        <segue destination="o0c-Aa-s8H" kind="modal" identifier="errorSegue" id="kSA-FQ-PXd"/>
+                        <segue destination="o0c-Aa-s8H" kind="modal" identifier="errorSegue" modalPresentationStyle="pageSheet" id="kSA-FQ-PXd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wXh-OO-gg6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -518,10 +518,10 @@
             </objects>
             <point key="canvasLocation" x="3171" y="326"/>
         </scene>
-        <!--View Controller-->
+        <!--Error View Controller-->
         <scene sceneID="bgS-Wi-juv">
             <objects>
-                <viewController id="o0c-Aa-s8H" sceneMemberID="viewController">
+                <viewController id="o0c-Aa-s8H" customClass="ErrorViewController" customModule="Leverage" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="b7n-2t-O2r">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
