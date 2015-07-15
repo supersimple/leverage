@@ -56,9 +56,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         startConnection();
         
         if(self.lever_url == "leverdemo"){
-            settingsWarning.layer.cornerRadius = 3
-            settingsWarning.layer.borderColor = UIColor( red: 66/255, green: 66/255, blue:66/255, alpha: 0.9 ).CGColor
-            settingsWarning.layer.borderWidth = 1.0
+//            settingsWarning.layer.cornerRadius = 3
+//            settingsWarning.layer.borderColor = UIColor( red: 66/255, green: 66/255, blue:66/255, alpha: 0.9 ).CGColor
+//            settingsWarning.layer.borderWidth = 1.0
             
             goToSettingsButton.layer.cornerRadius = 3
             goToSettingsButton.contentEdgeInsets = UIEdgeInsets(top: 9, left: 15, bottom: 9, right: 15)

@@ -261,27 +261,19 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="XUM-3k-PCE"/>
                                 </connections>
                             </tableView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" id="MRl-tK-Xda">
-                                <rect key="frame" x="383" y="110" width="37" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="color" red="0.086274509803921567" green="0.47843137254901963" blue="0.78431372549019607" alpha="1" colorSpace="calibratedRGB"/>
-                            </activityIndicatorView>
-                            <view hidden="YES" alpha="0.90000000000000002" contentMode="scaleToFill" id="MO3-xk-fsI">
-                                <rect key="frame" x="134" y="200" width="500" height="300"/>
+                            <view hidden="YES" alpha="0.94999999999999996" contentMode="scaleToFill" id="MO3-xk-fsI">
+                                <rect key="frame" x="0.0" y="80" width="768" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4tf-dV-xQG">
-                                        <rect key="frame" x="8" y="8" width="484" height="211"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are currently viewing sample data. Please go to your settings to customize the app for your account." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4tf-dV-xQG">
+                                        <rect key="frame" x="8" y="8" width="810" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <string key="text">You are currently viewing sample data.
-Please go to your settings 
-to customize the app for your account.</string>
-                                        <fontDescription key="fontDescription" name="Lato-LightItalic" family="Lato" pointSize="20"/>
-                                        <color key="textColor" red="0.26827050260000002" green="0.26827050260000002" blue="0.26827050260000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="Lato-LightItalic" family="Lato" pointSize="14"/>
+                                        <color key="textColor" red="0.086274509799999996" green="0.47843137250000001" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="UYU-64-I0H">
-                                        <rect key="frame" x="200" y="185" width="100" height="34"/>
+                                        <rect key="frame" x="644" y="21" width="100" height="34"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.0" green="0.63137254899999995" blue="0.86274509799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
@@ -293,8 +285,13 @@ to customize the app for your account.</string>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.97213955019999998" green="0.97213955019999998" blue="0.97213955019999998" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" id="MRl-tK-Xda">
+                                <rect key="frame" x="383" y="110" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" red="0.086274509803921567" green="0.47843137254901963" blue="0.78431372549019607" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
