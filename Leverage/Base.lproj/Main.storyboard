@@ -284,6 +284,11 @@
                                             <action selector="goToSettingsButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fU9-pe-Yp8"/>
                                         </connections>
                                     </button>
+                                    <view contentMode="scaleToFill" id="uyh-ka-Wjx">
+                                        <rect key="frame" x="0.0" y="79" width="786" height="1"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                                        <color key="backgroundColor" red="0.71775793650793651" green="0.71775793650793651" blue="0.71775793650793651" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.97213955019999998" green="0.97213955019999998" blue="0.97213955019999998" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
