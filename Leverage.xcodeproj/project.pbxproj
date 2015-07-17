@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 47;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -246,7 +246,7 @@
 		5F0638F71B323F4C00277871 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = supersimple;
 				TargetAttributes = {
 					5F0638FE1B323F4C00277871 = {
@@ -260,7 +260,7 @@
 				};
 			};
 			buildConfigurationList = 5F0638FA1B323F4C00277871 /* Build configuration list for PBXProject "Leverage" */;
-			compatibilityVersion = "Xcode 6.3";
+			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -467,6 +467,7 @@
 				INFOPLIST_FILE = Leverage/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "1d7ed3d4-1d46-4291-95fd-f49fa75ee055";
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
@@ -479,6 +480,7 @@
 				INFOPLIST_FILE = Leverage/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "1d7ed3d4-1d46-4291-95fd-f49fa75ee055";
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
