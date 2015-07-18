@@ -41,6 +41,7 @@
 		5F16D87B1B3D128800B7A62C /* detailButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F16D87A1B3D128800B7A62C /* detailButton.swift */; };
 		5F1FADFB1B33964F00F4EF78 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F1FADFA1B33964F00F4EF78 /* SettingsViewController.swift */; };
 		5F1FADFD1B33C6A100F4EF78 /* settings-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F1FADFC1B33C6A100F4EF78 /* settings-icon.png */; };
+		5F78FF581B59BAD5009C9F35 /* html_template.html in Resources */ = {isa = PBXBuildFile; fileRef = 5F78FF571B59BAD5009C9F35 /* html_template.html */; };
 		5FFECAD81B54BE1D000D510A /* ThankYouController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFECAD71B54BE1D000D510A /* ThankYouController.swift */; };
 		5FFECADA1B54C7C2000D510A /* ErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFECAD91B54C7C2000D510A /* ErrorViewController.swift */; };
 /* End PBXBuildFile section */
@@ -94,6 +95,7 @@
 		5F16D87A1B3D128800B7A62C /* detailButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = detailButton.swift; sourceTree = "<group>"; };
 		5F1FADFA1B33964F00F4EF78 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		5F1FADFC1B33C6A100F4EF78 /* settings-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "settings-icon.png"; path = "../../../Desktop/GRAPHICS/settings-icon.png"; sourceTree = "<group>"; };
+		5F78FF571B59BAD5009C9F35 /* html_template.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = html_template.html; sourceTree = "<group>"; };
 		5FFECAD71B54BE1D000D510A /* ThankYouController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThankYouController.swift; sourceTree = "<group>"; };
 		5FFECAD91B54C7C2000D510A /* ErrorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -148,6 +150,7 @@
 				5F06394E1B3241F600277871 /* FormViewController.swift */,
 				5F0639081B323F4C00277871 /* Main.storyboard */,
 				5F0639541B327E3A00277871 /* cellView.swift */,
+				5F78FF571B59BAD5009C9F35 /* html_template.html */,
 				5F06390B1B323F4C00277871 /* Images.xcassets */,
 				5F06390D1B323F4C00277871 /* LaunchScreen.xib */,
 				5F0639021B323F4C00277871 /* Supporting Files */,
@@ -300,6 +303,7 @@
 				5F06393F1B323F8E00277871 /* Icon-Small-40@3x.png in Resources */,
 				5F0639511B3242D500277871 /* Lato in Resources */,
 				5F0639441B323F8E00277871 /* Icon-Small@3x.png in Resources */,
+				5F78FF581B59BAD5009C9F35 /* html_template.html in Resources */,
 				5F0639391B323F8E00277871 /* Icon-72.png in Resources */,
 				5F0639471B323F8E00277871 /* iTunesArtwork@2x.png in Resources */,
 				5F1FADFD1B33C6A100F4EF78 /* settings-icon.png in Resources */,

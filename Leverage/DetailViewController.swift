@@ -13,10 +13,9 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var backToList: UIButton!
     @IBOutlet weak var applyButton: UIButton!
     
-    @IBOutlet weak var scroll_view: UIScrollView!
+    @IBOutlet weak var web_view: UIWebView!
     
     @IBOutlet weak var job_title: UILabel!
-    @IBOutlet weak var job_desc: UILabel!
     
     let urlPath: String = "https://api.lever.co/v0/postings/"
     let responseMode = "json"
@@ -29,10 +28,7 @@ class DetailViewController: UIViewController {
     var job_text: NSString = "";
     var job_description: NSString = "";
     var job_lists: NSArray = [];
-    var job_details = NSMutableAttributedString(string:"");
-    
-    
-    
+    var job_details: NSString = "";
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,22 +78,14 @@ class DetailViewController: UIViewController {
             let results: NSDictionary = jsonResult as NSDictionary
             dispatch_async(dispatch_get_main_queue(), {
                 self.job_text = results["text"] as! NSString
-                self.job_description = results["description"] as! NSString
+                self.job_description = (results["description"] as! NSString).stringByReplacingOccurrencesOfString("\n", withString: "<br />")
                 self.job_lists = results["lists"] as! NSArray
+                var tmp_str: NSString = "<ul style='padding:10px;margin:0 10px;list-style:square;'>"
                 for item in self.job_lists {
-                    self.job_details.appendAttributedString(NSMutableAttributedString(string: "\n\n"));
-                    //self.job_details += (item["text"]) as String;
-                    var attrs = [NSFontAttributeName : UIFont.boldSystemFontOfSize(20)]
-                    var boldString = NSMutableAttributedString(string:(item["text"]) as! String, attributes:attrs)
-                    self.job_details.appendAttributedString(NSMutableAttributedString(attributedString: boldString));
-                    self.job_details.appendAttributedString(NSMutableAttributedString(string: "\n"));
-                    let aString: String = (item["content"]) as! String;
-                    let bString = aString.stringByReplacingOccurrencesOfString("<li>", withString: "\n• ", options: NSStringCompareOptions.LiteralSearch, range: nil)
-                    let newString = bString.stringByReplacingOccurrencesOfString("</li>", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
-                    self.job_details.appendAttributedString(NSMutableAttributedString(string: newString));
-                    
+                    tmp_str = (tmp_str as String) + " " + (item["content"] as! String)
                 }
-                
+                tmp_str = (tmp_str as String) + "</ul>"
+                self.job_details = "\(self.job_description)<br /><br />\(tmp_str)";
                 self.completeViewText();
             })
         })
@@ -113,19 +101,13 @@ class DetailViewController: UIViewController {
     
     internal func completeViewText(){
         job_title.text = job_text as? String;
-        job_desc.text = job_description as String;
-        (job_desc.attributedText as! NSMutableAttributedString).appendAttributedString(NSMutableAttributedString(attributedString: job_details));
-        
-        job_desc.font = UIFont(name: "Lato Hairline", size: 18.0)
-        job_desc.numberOfLines = 0;
-        job_desc.sizeToFit();
-        scroll_view.contentSize = job_desc.frame.size
+        self.job_details = "<html><body style='color:#444; font-family:Lato-Regular;padding:0;margin:0;font-size:16px;line-height:24px;'>" + (self.job_details as String) + "</body></html>"
+        web_view.loadHTMLString(self.job_details as String, baseURL: nil)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "showJobForm") {
             // pass data to next view
-            //https://api.lever.co/v0/postings/masteryconnect/5721843f-8dd3-41e8-bfec-045c7c522cad
             let formViewController = segue.destinationViewController as! FormViewController
             formViewController.selected_job_guid = self.selected_job_guid;
             

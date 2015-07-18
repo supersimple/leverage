@@ -326,7 +326,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GRm-wU-OEy">
-                                        <rect key="frame" x="8" y="29" width="752" height="21"/>
+                                        <rect key="frame" x="8" y="29" width="752" height="33"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="27"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -347,18 +347,6 @@
                                     <segue destination="BYZ-38-t0r" kind="modal" identifier="backToJobsList" id="0u4-eR-FXh"/>
                                 </connections>
                             </button>
-                            <scrollView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="9bW-xv-SCy">
-                                <rect key="frame" x="16" y="159" width="736" height="865"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <label autoresizesSubviews="NO" opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="568" placeholderIntrinsicHeight="48" usesAttributedText="YES" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" id="9kN-kY-V2R">
-                                        <rect key="frame" x="0.0" y="0.0" width="728" height="20"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <attributedString key="attributedText"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="zxD-c1-XMW">
                                 <rect key="frame" x="570" y="100" width="182" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -371,15 +359,19 @@
                                     <segue destination="XDx-s5-Phf" kind="modal" identifier="showJobForm" id="VuC-6O-KUt"/>
                                 </connections>
                             </button>
+                            <webView contentMode="scaleToFill" id="DU7-fC-3oy">
+                                <rect key="frame" x="16" y="155" width="736" height="849"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="applyButton" destination="zxD-c1-XMW" id="Awj-yL-Zbl"/>
                         <outlet property="backToList" destination="G19-h2-Q4m" id="m6w-3v-Lyz"/>
-                        <outlet property="job_desc" destination="9kN-kY-V2R" id="adT-U1-Rkf"/>
                         <outlet property="job_title" destination="GRm-wU-OEy" id="Scr-oh-Vad"/>
-                        <outlet property="scroll_view" destination="9bW-xv-SCy" id="c6S-YX-3io"/>
+                        <outlet property="web_view" destination="DU7-fC-3oy" id="YrX-P3-JBX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gvy-Rz-qAs" userLabel="First Responder" sceneMemberID="firstResponder"/>
