@@ -34,7 +34,6 @@
 		5F0639471B323F8E00277871 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F0639351B323F8E00277871 /* iTunesArtwork@2x.png */; };
 		5F0639491B32404F00277871 /* leverage-launch-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5F0639481B32404F00277871 /* leverage-launch-logo.png */; };
 		5F06394D1B3241B900277871 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F06394C1B3241B900277871 /* DetailViewController.swift */; };
-		5F06394F1B3241F600277871 /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F06394E1B3241F600277871 /* FormViewController.swift */; };
 		5F0639511B3242D500277871 /* Lato in Resources */ = {isa = PBXBuildFile; fileRef = 5F0639501B3242D500277871 /* Lato */; };
 		5F0639531B327CD000277871 /* job.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0639521B327CD000277871 /* job.swift */; };
 		5F0639551B327E3A00277871 /* cellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0639541B327E3A00277871 /* cellView.swift */; };
@@ -86,7 +85,6 @@
 		5F0639351B323F8E00277871 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iTunesArtwork@2x.png"; path = "../../TestJson/TestJson/Images.xcassets/iTunesArtwork@2x.png"; sourceTree = "<group>"; };
 		5F0639481B32404F00277871 /* leverage-launch-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "leverage-launch-logo.png"; path = "../../../Desktop/GRAPHICS/leverage-launch-logo.png"; sourceTree = "<group>"; };
 		5F06394C1B3241B900277871 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		5F06394E1B3241F600277871 /* FormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
 		5F0639501B3242D500277871 /* Lato */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Lato; path = ../../../../../Library/Fonts/Lato; sourceTree = "<group>"; };
 		5F0639521B327CD000277871 /* job.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = job.swift; sourceTree = "<group>"; };
 		5F0639541B327E3A00277871 /* cellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cellView.swift; sourceTree = "<group>"; };
@@ -141,7 +139,6 @@
 				5F0639521B327CD000277871 /* job.swift */,
 				5F16D87A1B3D128800B7A62C /* detailButton.swift */,
 				5F06394C1B3241B900277871 /* DetailViewController.swift */,
-				5F06394E1B3241F600277871 /* FormViewController.swift */,
 				5F0639081B323F4C00277871 /* Main.storyboard */,
 				5F0639541B327E3A00277871 /* cellView.swift */,
 				5F78FF571B59BAD5009C9F35 /* html_template.html */,
@@ -328,7 +325,6 @@
 				5F1FADFB1B33964F00F4EF78 /* SettingsViewController.swift in Sources */,
 				5F0639531B327CD000277871 /* job.swift in Sources */,
 				5F16D87B1B3D128800B7A62C /* detailButton.swift in Sources */,
-				5F06394F1B3241F600277871 /* FormViewController.swift in Sources */,
 				5F0639551B327E3A00277871 /* cellView.swift in Sources */,
 				5F0639051B323F4C00277871 /* AppDelegate.swift in Sources */,
 			);

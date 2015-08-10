@@ -11,7 +11,6 @@ import UIKit
 class DetailViewController: UIViewController {
     
     @IBOutlet weak var backToList: UIButton!
-    @IBOutlet weak var applyButton: UIButton!
     
     @IBOutlet weak var web_view: UIWebView!
     
@@ -34,8 +33,6 @@ class DetailViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         backToList.layer.cornerRadius = 3
         backToList.contentEdgeInsets = UIEdgeInsets(top: 9, left: 15, bottom: 9, right: 15)
-        applyButton.layer.cornerRadius = 3
-        applyButton.contentEdgeInsets = UIEdgeInsets(top: 9, left: 15, bottom: 9, right: 15)
         
         self.loadPage();
     }
@@ -103,15 +100,6 @@ class DetailViewController: UIViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        if (segue.identifier == "showJobForm") {
-            // pass data to next view
-            let formViewController = segue.destinationViewController as! FormViewController
-            formViewController.selected_job_guid = self.selected_job_guid;
-            
-            
-            
-            formViewController.description_url = self.urlPath + parseLeverUrl(self.lever_url) as String + "/" + self.selected_job_guid
-        }
     }
     
 }

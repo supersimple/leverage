@@ -11,7 +11,6 @@
             <string>Lato-Light</string>
             <string>Lato-Light</string>
             <string>Lato-Light</string>
-            <string>Lato-Light</string>
         </mutableArray>
         <mutableArray key="Lato-LightItalic.ttf">
             <string>Lato-LightItalic</string>
@@ -19,8 +18,6 @@
             <string>Lato-LightItalic</string>
         </mutableArray>
         <mutableArray key="Lato-Regular.ttf">
-            <string>Lato-Regular</string>
-            <string>Lato-Regular</string>
             <string>Lato-Regular</string>
             <string>Lato-Regular</string>
             <string>Lato-Regular</string>
@@ -301,18 +298,6 @@
                                     <segue destination="BYZ-38-t0r" kind="modal" identifier="backToJobsList" id="0u4-eR-FXh"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="zxD-c1-XMW">
-                                <rect key="frame" x="570" y="100" width="182" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.63137254899999995" blue="0.86274509799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
-                                <state key="normal" title="APPLY FOR POSITION">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="XDx-s5-Phf" kind="modal" identifier="showJobForm" id="VuC-6O-KUt"/>
-                                </connections>
-                            </button>
                             <webView contentMode="scaleToFill" id="DU7-fC-3oy">
                                 <rect key="frame" x="16" y="155" width="736" height="849"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -322,7 +307,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="applyButton" destination="zxD-c1-XMW" id="Awj-yL-Zbl"/>
                         <outlet property="backToList" destination="G19-h2-Q4m" id="m6w-3v-Lyz"/>
                         <outlet property="job_title" destination="GRm-wU-OEy" id="Scr-oh-Vad"/>
                         <outlet property="web_view" destination="DU7-fC-3oy" id="YrX-P3-JBX"/>
@@ -332,57 +316,6 @@
             </objects>
             <point key="canvasLocation" x="1320" y="515"/>
         </scene>
-        <!--Form View Controller-->
-        <scene sceneID="RST-6Y-Zgg">
-            <objects>
-                <viewController id="XDx-s5-Phf" customClass="FormViewController" customModule="Leverage" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="qet-Qh-2ib">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" id="qhH-nf-CLN">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apply For Position" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="R3m-uH-OBf">
-                                        <rect key="frame" x="8" y="29" width="752" height="33"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="27"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="C6d-J0-kOw">
-                                <rect key="frame" x="16" y="100" width="79" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.63137254899999995" blue="0.86274509799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
-                                <state key="normal" title="BACK">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="cu6-Vi-uuB" kind="modal" identifier="backToJobDetail" id="eAp-HS-WBU"/>
-                                </connections>
-                            </button>
-                            <webView contentMode="scaleToFill" scalesPageToFit="YES" id="jUI-8K-LLA">
-                                <rect key="frame" x="0.0" y="150" width="768" height="875"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </webView>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                    <connections>
-                        <outlet property="applyFormWebView" destination="jUI-8K-LLA" id="PU0-DC-SU0"/>
-                        <outlet property="backToDetailButton" destination="C6d-J0-kOw" id="iFj-lO-H7W"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wXh-OO-gg6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2284" y="353"/>
-        </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -391,6 +324,5 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="0u4-eR-FXh"/>
-        <segue reference="eAp-HS-WBU"/>
     </inferredMetricsTieBreakers>
 </document>
