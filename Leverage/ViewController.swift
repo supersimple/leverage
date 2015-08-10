@@ -20,7 +20,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var selected_job_guid: String = "";
     var request_path: String = ""
     var lever_url: String = ""
-    var lever_api_key: String = ""
     let userDefaults = NSUserDefaults.standardUserDefaults();
     var list_location: Bool = true
     var list_team: Bool = true
@@ -47,7 +46,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // Do any additional setup after loading the view, typically from a nib
         
         self.lever_url = parseLeverUrl(self.userDefaults.valueForKey("lever_url") as! String) as String
-        self.lever_api_key = self.userDefaults.valueForKey("lever_api_key") as! String
         self.request_path = self.urlPath + self.lever_url + "?mode=" + self.responseMode;
         self.list_location = (self.userDefaults.valueForKey("list_location") as? Bool)!
         self.list_team = (self.userDefaults.valueForKey("list_team") as? Bool)!
@@ -120,7 +118,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
         }
         activity.stopAnimating();
-        //self.jobsList.registerClass(cellView.self, forCellReuseIdentifier: "cell")
         self.jobsList!.reloadData()
     }
     
@@ -153,7 +150,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     private func checkForNil(dict: NSDictionary, k: String) -> String{
         if let tmp: AnyObject = dict[k]{
-            return dict[k] as! String
+            if let val = dict[k] as? String {
+                return val;
+            }else{
+                return ""
+            }
         }else{
             return ""
         }

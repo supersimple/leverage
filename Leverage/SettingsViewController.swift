@@ -10,7 +10,6 @@ import UIKit
 
 class SettingsViewController: UIViewController {
     @IBOutlet weak var guidField: UITextField!
-    @IBOutlet weak var apikeyField: UITextField!
     
     @IBOutlet weak var showLocation: UISwitch!
     @IBOutlet weak var showTeam: UISwitch!
@@ -23,12 +22,8 @@ class SettingsViewController: UIViewController {
         if(guidField.text.isEmpty){
             guidField.text = self.defaultGuid;
         }
-        if(apikeyField.text.isEmpty){
-            apikeyField.text = self.defaultApi;
-        }
         
         userDefaults.setObject(guidField.text, forKey: "lever_url")
-        userDefaults.setObject(apikeyField.text, forKey: "lever_api_key")
         userDefaults.setObject(showLocation.on, forKey: "list_location")
         userDefaults.setObject(showTeam.on, forKey: "list_team")
         userDefaults.setObject(showCommitment.on, forKey: "list_commitment")
@@ -37,7 +32,6 @@ class SettingsViewController: UIViewController {
     
     let userDefaults = NSUserDefaults.standardUserDefaults();
     let defaultGuid: String = "leverdemo";
-    let defaultApi: String = "5ac21346-8e0c-4494-8e7a-3eb92ff77902"
     
     override func viewDidLoad() {
         super.viewDidLoad()

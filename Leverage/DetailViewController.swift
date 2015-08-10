@@ -22,7 +22,6 @@ class DetailViewController: UIViewController {
     var selected_job_guid: String = "";
     var request_path: String = ""
     var lever_url: String = ""
-    var lever_api_key: String = ""
     var description_url: String = ""; //passed in via segue
     
     var job_text: NSString = "";
@@ -46,7 +45,6 @@ class DetailViewController: UIViewController {
         let userDefaults = NSUserDefaults.standardUserDefaults();
         
         self.lever_url = userDefaults.valueForKey("lever_url") as! String
-        self.lever_api_key = userDefaults.valueForKey("lever_api_key") as! String
         self.request_path = self.urlPath + self.lever_url + "?mode=" + self.responseMode;
         
     }
@@ -59,7 +57,6 @@ class DetailViewController: UIViewController {
     private func loadPage() {
         let url = NSURL(string: description_url)
         let session = NSURLSession.sharedSession()
-        println(url);
         let task = session.dataTaskWithURL(url!, completionHandler: {data, response, error -> Void in
             println("Task completed")
             if(error != nil) {

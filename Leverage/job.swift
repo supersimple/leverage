@@ -27,10 +27,19 @@ class Job {
         self.applyUrl = properties["applyUrl"] as! NSString;
         self.categories = properties["categories"] as! NSDictionary;
         self.text = properties["text"] as! NSString;
-        self.description = properties["description"] as! NSString;
+        self.description = checkForNil(properties,k: "description") as NSString!
         self.additional = properties.objectForKey("additional") != nil ? properties["additional"] as! NSString : "" as NSString;
         self.createdAt = NSDate(timeIntervalSince1970:properties["createdAt"] as! NSTimeInterval);
         
+        
+        
     }
     
+    private func checkForNil(dict: NSDictionary, k: String) -> NSString{
+        if let tmp: AnyObject = dict[k]{
+            return dict[k] as! NSString
+        }else{
+            return ""
+        }
+    }
 }
