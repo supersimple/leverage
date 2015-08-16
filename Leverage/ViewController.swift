@@ -153,7 +153,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     private func checkForNil(dict: NSDictionary, k: String) -> String{
         if let tmp: AnyObject = dict[k]{
-            return dict[k] as! String
+            
+            if let val = dict[k] as? String {
+                return val;
+            }else{
+                return ""
+            }
+            
         }else{
             return ""
         }
