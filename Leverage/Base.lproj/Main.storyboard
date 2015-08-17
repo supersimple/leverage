@@ -265,7 +265,7 @@
                                 <rect key="frame" x="0.0" y="80" width="768" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are currently viewing sample data. Please go to your settings to customize the app for your account." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4tf-dV-xQG">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please go to your settings to customize the app for your account." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4tf-dV-xQG">
                                         <rect key="frame" x="8" y="8" width="810" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Lato-LightItalic" family="Lato" pointSize="14"/>
@@ -305,6 +305,7 @@
                         <outlet property="goToSettingsButton" destination="UYU-64-I0H" id="tJV-Yn-lGu"/>
                         <outlet property="jobsList" destination="m8p-ez-Kj7" id="a7L-QM-mTQ"/>
                         <outlet property="settingsWarning" destination="MO3-xk-fsI" id="jDa-66-mtl"/>
+                        <outlet property="settingsWarningLabel" destination="4tf-dV-xQG" id="k9u-FF-2zd"/>
                         <segue destination="cu6-Vi-uuB" kind="modal" identifier="showJobDetail" id="Z7X-9D-6Jz"/>
                         <segue destination="kfp-ke-S3e" kind="modal" identifier="showSettings" id="FQA-GA-9AC"/>
                     </connections>

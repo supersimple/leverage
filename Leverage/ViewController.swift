@@ -21,6 +21,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var request_path: String = ""
     var lever_url: String = ""
     var lever_api_key: String = ""
+    let defaultApiKey = "5ac21346-8e0c-4494-8e7a-3eb92ff77902"
+    let defaultUrl = "leverdemo";
     let userDefaults = NSUserDefaults.standardUserDefaults();
     var list_location: Bool = true
     var list_team: Bool = true
@@ -29,6 +31,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet weak var activity: UIActivityIndicatorView!
     @IBOutlet weak var settingsWarning: UIView!
+    @IBOutlet weak var settingsWarningLabel: UILabel!
     @IBOutlet weak var jobsList: UITableView!
     @IBAction func showDetailView(sender: DetailButton) {
         self.selected_job_guid = sender.stored_guid as String
@@ -47,7 +50,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // Do any additional setup after loading the view, typically from a nib
         
         self.lever_url = parseLeverUrl(self.userDefaults.valueForKey("lever_url") as! String) as String
-        self.lever_api_key = self.userDefaults.valueForKey("lever_api_key") as! String
+        self.lever_api_key = settingOrDefault(self.userDefaults.valueForKey("lever_api_key") as! String, def: defaultApiKey) as String
         self.request_path = self.urlPath + self.lever_url + "?mode=" + self.responseMode;
         self.list_location = (self.userDefaults.valueForKey("list_location") as? Bool)!
         self.list_team = (self.userDefaults.valueForKey("list_team") as? Bool)!
@@ -55,11 +58,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         startConnection();
         
-        if(self.lever_url == "leverdemo"){
+        if(self.lever_url == defaultUrl || self.lever_api_key == defaultApiKey){
 //            settingsWarning.layer.cornerRadius = 3
 //            settingsWarning.layer.borderColor = UIColor( red: 66/255, green: 66/255, blue:66/255, alpha: 0.9 ).CGColor
 //            settingsWarning.layer.borderWidth = 1.0
-            
+            if(self.lever_url == defaultUrl){
+                settingsWarningLabel.text = "You are currently viewing sample data. Please go to your settings to customize the app for your account."
+            }else if(self.lever_api_key == defaultApiKey){
+                settingsWarningLabel.text = "You currently do not have an API Key set. Please go to your settings to customize the app for your account."
+            }
             goToSettingsButton.layer.cornerRadius = 3
             goToSettingsButton.contentEdgeInsets = UIEdgeInsets(top: 9, left: 15, bottom: 9, right: 15)
             settingsWarning.hidden = false
@@ -162,6 +169,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
         }else{
             return ""
+        }
+    }
+    
+    private func settingOrDefault(str: AnyObject, def: String) -> String{
+        if((str as AnyObject!) == nil){
+            return def
+        }else if((str as! String).isEmpty){
+            return def
+        }else{
+            return str as! String
         }
     }
     
