@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Lato-Italic.ttf">
+            <string>Lato-Italic</string>
             <string>Lato-Italic</string>
             <string>Lato-Italic</string>
             <string>Lato-Italic</string>
@@ -24,8 +25,10 @@
             <string>Lato-Light</string>
             <string>Lato-Light</string>
             <string>Lato-Light</string>
+            <string>Lato-Light</string>
         </mutableArray>
         <mutableArray key="Lato-LightItalic.ttf">
+            <string>Lato-LightItalic</string>
             <string>Lato-LightItalic</string>
             <string>Lato-LightItalic</string>
             <string>Lato-LightItalic</string>
@@ -57,7 +60,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="LeM-ft-7TT">
-                                <rect key="frame" x="234" y="240" width="300" height="504"/>
+                                <rect key="frame" x="234" y="207" width="300" height="609"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Company's Lever Homepage" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hQ7-fg-nZd">
@@ -96,7 +99,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" id="KXc-UF-tao" userLabel="cellButton">
-                                        <rect key="frame" x="119" y="455" width="160" height="30"/>
+                                        <rect key="frame" x="119" y="548" width="160" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.0" green="0.63137254899999995" blue="0.86274509799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
@@ -113,57 +116,83 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.83506944444444442" green="0.83506944444444442" blue="0.83506944444444442" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
-                                    <view alpha="0.33000000000000002" contentMode="scaleToFill" id="QRc-AI-ZkT">
-                                        <rect key="frame" x="3" y="199" width="285" height="1"/>
+                                    <view alpha="0.33000001311302185" contentMode="scaleToFill" id="UmH-9P-RIC">
+                                        <rect key="frame" x="3" y="319" width="285" height="1"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.83506944439999997" green="0.83506944439999997" blue="0.83506944439999997" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
                                     <view alpha="0.33000001311302185" contentMode="scaleToFill" id="b56-uh-0vV">
-                                        <rect key="frame" x="3" y="303" width="285" height="1"/>
+                                        <rect key="frame" x="3" y="391" width="285" height="1"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.83506944439999997" green="0.83506944439999997" blue="0.83506944439999997" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="Hj4-gK-buw">
-                                        <rect key="frame" x="229" y="250" width="51" height="31"/>
+                                        <rect key="frame" x="229" y="338" width="51" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </switch>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show Location in List View" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gFE-Wc-vVg">
-                                        <rect key="frame" x="11" y="255" width="157" height="21"/>
+                                        <rect key="frame" x="11" y="343" width="157" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="14"/>
                                         <color key="textColor" red="0.27494626319999999" green="0.27494626319999999" blue="0.27494626319999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view alpha="0.33000001311302185" contentMode="scaleToFill" id="X07-3q-DS1">
-                                        <rect key="frame" x="0.0" y="361" width="285" height="1"/>
+                                        <rect key="frame" x="0.0" y="449" width="285" height="1"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.83506944439999997" green="0.83506944439999997" blue="0.83506944439999997" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="TZi-L4-rfq">
-                                        <rect key="frame" x="230" y="312" width="51" height="31"/>
+                                        <rect key="frame" x="230" y="400" width="51" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </switch>
                                     <view alpha="0.33000001311302185" contentMode="scaleToFill" id="bB8-06-SwC">
-                                        <rect key="frame" x="3" y="417" width="285" height="1"/>
+                                        <rect key="frame" x="3" y="505" width="285" height="1"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.83506944439999997" green="0.83506944439999997" blue="0.83506944439999997" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="kFB-Dx-W10">
-                                        <rect key="frame" x="229" y="370" width="51" height="31"/>
+                                        <rect key="frame" x="229" y="458" width="51" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </switch>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show Team in List View" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9Bu-Ik-XIL">
-                                        <rect key="frame" x="11" y="317" width="157" height="21"/>
+                                        <rect key="frame" x="11" y="405" width="157" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="14"/>
                                         <color key="textColor" red="0.27494626319999999" green="0.27494626319999999" blue="0.27494626319999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show Commitment in List View" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4g4-Wl-6Sq">
-                                        <rect key="frame" x="11" y="375" width="185" height="21"/>
+                                        <rect key="frame" x="11" y="463" width="185" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="14"/>
                                         <color key="textColor" red="0.27494626319999999" green="0.27494626319999999" blue="0.27494626319999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view alpha="0.33000000000000002" contentMode="scaleToFill" id="QRc-AI-ZkT">
+                                        <rect key="frame" x="3" y="186" width="285" height="1"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.83506944439999997" green="0.83506944439999997" blue="0.83506944439999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Referral Link" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="e25-IW-d0r">
+                                        <rect key="frame" x="11" y="198" width="147" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="14"/>
+                                        <color key="textColor" red="0.27494626319999999" green="0.27494626319999999" blue="0.27494626319999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="REFERRALCODE" minimumFontSize="17" id="mEg-Yn-mps">
+                                        <rect key="frame" x="11" y="227" width="268" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="Lato-LightItalic" family="Lato" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="jobs.lever.co/yoursite?lever-via=REFERRALCODE" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JqS-AT-eKb">
+                                        <rect key="frame" x="15" y="256" width="263" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Lato-Italic" family="Lato" pointSize="12"/>
+                                        <color key="textColor" red="0.44605654760000002" green="0.44605654760000002" blue="0.44605654760000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -175,6 +204,7 @@
                         <outlet property="apikeyField" destination="vA4-y8-hpr" id="LEP-qj-00P"/>
                         <outlet property="applyButton" destination="KXc-UF-tao" id="ki0-wm-QTj"/>
                         <outlet property="guidField" destination="EwO-Fh-MhG" id="Lj4-fJ-xxg"/>
+                        <outlet property="referralCodeField" destination="mEg-Yn-mps" id="lty-KK-tBW"/>
                         <outlet property="showCommitment" destination="kFB-Dx-W10" id="nad-Q8-lDW"/>
                         <outlet property="showLocation" destination="Hj4-gK-buw" id="qXO-Ed-Uvx"/>
                         <outlet property="showTeam" destination="TZi-L4-rfq" id="C0p-iq-iHE"/>
@@ -183,7 +213,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xt7-ds-5MK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-823.03999999999996" y="424.96000000000004"/>
+            <point key="canvasLocation" x="-824" y="424"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -585,7 +615,7 @@ Please try again.</string>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Z7X-9D-6Jz"/>
-        <segue reference="0u4-eR-FXh"/>
+        <segue reference="eAp-HS-WBU"/>
+        <segue reference="oXH-oa-oLL"/>
     </inferredMetricsTieBreakers>
 </document>

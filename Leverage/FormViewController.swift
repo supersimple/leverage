@@ -19,6 +19,7 @@ class FormViewController: UIViewController {
     var request_path: String = ""
     var lever_url: String = ""
     var lever_api_key: String = ""
+    var lever_referral_code: String = ""
     
     @IBOutlet weak var fullnameField: UITextField!
     @IBOutlet weak var emailField: UITextField!
@@ -68,6 +69,7 @@ class FormViewController: UIViewController {
         
         self.lever_url = userDefaults.valueForKey("lever_url") as! String
         self.lever_api_key = userDefaults.valueForKey("lever_api_key") as! String
+        self.lever_referral_code = userDefaults.valueForKey("lever_referral_code") as! String
         self.request_path = self.urlPath + self.lever_url + "?mode=" + self.responseMode;
         
     }
@@ -92,7 +94,13 @@ class FormViewController: UIViewController {
         var error: NSError?
         
         // create some JSON data and configure the request
+        
         var bodyData = "name=\(full_name_value)&email=\(email_address_value)&phone=\(phone_number_value)&urls[LinkedIn]=\(resume_value)&comments=\(comments_value)"
+
+        if(!self.lever_referral_code.isEmpty){
+            bodyData = "socialReferralKey=" + self.lever_referral_code + "&" + bodyData
+        }
+        
         request.HTTPBody = bodyData.dataUsingEncoding(NSUTF8StringEncoding);
         
         //        let jsonString = "json=[{\"name\":\(full_name_value),\"email\":\(email_address_value)}]"

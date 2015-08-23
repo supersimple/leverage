@@ -11,6 +11,7 @@ import UIKit
 class SettingsViewController: UIViewController {
     @IBOutlet weak var guidField: UITextField!
     @IBOutlet weak var apikeyField: UITextField!
+    @IBOutlet weak var referralCodeField: UITextField!
     
     @IBOutlet weak var showLocation: UISwitch!
     @IBOutlet weak var showTeam: UISwitch!
@@ -29,6 +30,7 @@ class SettingsViewController: UIViewController {
         
         userDefaults.setObject(guidField.text, forKey: "lever_url")
         userDefaults.setObject(apikeyField.text, forKey: "lever_api_key")
+        userDefaults.setObject(referralCodeField.text, forKey: "lever_referral_code")
         userDefaults.setObject(showLocation.on, forKey: "list_location")
         userDefaults.setObject(showTeam.on, forKey: "list_team")
         userDefaults.setObject(showCommitment.on, forKey: "list_commitment")
