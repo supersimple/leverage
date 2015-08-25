@@ -25,12 +25,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        var mainViewController: ViewController = mainStoryboard.instantiateViewControllerWithIdentifier("ViewController") as! ViewController
+        var navController:UINavigationController = mainStoryboard.instantiateViewControllerWithIdentifier("ViewController") as! UINavigationController
+        var mainViewController: ViewController = navController.viewControllers[0] as! ViewController
         var settingsViewController: SettingsViewController = mainStoryboard.instantiateViewControllerWithIdentifier("SettingsViewController") as! SettingsViewController
         if(lever_url == "" || list_location == nil || list_team == nil || list_commitment == nil){
             self.window?.rootViewController = settingsViewController
+            
         }else{
-            self.window?.rootViewController = mainViewController
+            //self.window?.rootViewController = mainViewController
+            self.window?.rootViewController = navController
         }
         self.window?.makeKeyAndVisible()
         
