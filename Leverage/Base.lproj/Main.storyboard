@@ -200,6 +200,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.93082423941798942" green="0.93082423941798942" blue="0.93082423941798942" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" id="6HJ-Ca-1pX"/>
                     <connections>
                         <outlet property="apikeyField" destination="vA4-y8-hpr" id="LEP-qj-00P"/>
                         <outlet property="applyButton" destination="KXc-UF-tao" id="ki0-wm-QTj"/>
@@ -208,12 +209,12 @@
                         <outlet property="showCommitment" destination="kFB-Dx-W10" id="nad-Q8-lDW"/>
                         <outlet property="showLocation" destination="Hj4-gK-buw" id="qXO-Ed-Uvx"/>
                         <outlet property="showTeam" destination="TZi-L4-rfq" id="C0p-iq-iHE"/>
-                        <segue destination="uyi-uv-uDy" kind="modal" identifier="showInitialJobsList" id="oXH-oa-oLL"/>
+                        <segue destination="BYZ-38-t0r" kind="push" identifier="showInitialJobsList" id="kCX-eC-zQn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xt7-ds-5MK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-824" y="424"/>
+            <point key="canvasLocation" x="-842" y="540"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -338,7 +339,7 @@
                         <outlet property="settingsWarning" destination="MO3-xk-fsI" id="jDa-66-mtl"/>
                         <outlet property="settingsWarningLabel" destination="4tf-dV-xQG" id="k9u-FF-2zd"/>
                         <segue destination="cu6-Vi-uuB" kind="push" identifier="showJobDetail" id="Z7X-9D-6Jz"/>
-                        <segue destination="kfp-ke-S3e" kind="modal" identifier="showSettings" id="FQA-GA-9AC"/>
+                        <segue destination="kfp-ke-S3e" kind="push" identifier="showSettings" id="FQA-GA-9AC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -388,7 +389,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="XDx-s5-Phf" kind="modal" identifier="showJobForm" id="VuC-6O-KUt"/>
+                                    <segue destination="XDx-s5-Phf" kind="push" identifier="showJobForm" id="VuC-6O-KUt"/>
                                 </connections>
                             </button>
                             <webView contentMode="scaleToFill" id="DU7-fC-3oy">
@@ -539,6 +540,7 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" id="59u-nd-RiB"/>
                     <connections>
                         <outlet property="applyButton" destination="vEw-Js-yaN" id="mHf-Lc-7zL"/>
                         <outlet property="backToDetailButton" destination="C6d-J0-kOw" id="iFj-lO-H7W"/>
@@ -608,13 +610,14 @@ Please try again.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q5E-2N-QLN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3171" y="1494"/>
+            <point key="canvasLocation" x="4151" y="1488"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Y43-FG-rRX">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uyi-uv-uDy" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="navController" automaticallyAdjustsScrollViewInsets="NO" id="uyi-uv-uDy" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="JAy-6C-SeO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="mhj-aj-OiM">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -626,7 +629,7 @@ Please try again.</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IQp-vS-bSm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="304" y="385"/>
+            <point key="canvasLocation" x="300" y="-323"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -635,7 +638,7 @@ Please try again.</string>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="oXH-oa-oLL"/>
         <segue reference="Z7X-9D-6Jz"/>
+        <segue reference="kCX-eC-zQn"/>
     </inferredMetricsTieBreakers>
 </document>

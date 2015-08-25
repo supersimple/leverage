@@ -35,6 +35,7 @@ class SettingsViewController: UIViewController {
         userDefaults.setObject(showTeam.on, forKey: "list_team")
         userDefaults.setObject(showCommitment.on, forKey: "list_commitment")
         self.performSegueWithIdentifier("showInitialJobsList", sender: nil)
+        //self.dismissViewControllerAnimated(true, completion: {}); //modal presentation only
     }
     
     let userDefaults = NSUserDefaults.standardUserDefaults();

@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        var navController:UINavigationController = mainStoryboard.instantiateViewControllerWithIdentifier("ViewController") as! UINavigationController
+        var navController:UINavigationController = mainStoryboard.instantiateViewControllerWithIdentifier("navController") as! UINavigationController
         var mainViewController: ViewController = navController.viewControllers[0] as! ViewController
         var settingsViewController: SettingsViewController = mainStoryboard.instantiateViewControllerWithIdentifier("SettingsViewController") as! SettingsViewController
         if(lever_url == "" || list_location == nil || list_team == nil || list_commitment == nil){
