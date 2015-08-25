@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="uyi-uv-uDy">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
@@ -208,7 +208,7 @@
                         <outlet property="showCommitment" destination="kFB-Dx-W10" id="nad-Q8-lDW"/>
                         <outlet property="showLocation" destination="Hj4-gK-buw" id="qXO-Ed-Uvx"/>
                         <outlet property="showTeam" destination="TZi-L4-rfq" id="C0p-iq-iHE"/>
-                        <segue destination="BYZ-38-t0r" kind="modal" identifier="showInitialJobsList" id="oXH-oa-oLL"/>
+                        <segue destination="uyi-uv-uDy" kind="modal" identifier="showInitialJobsList" id="oXH-oa-oLL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xt7-ds-5MK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -330,19 +330,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="X4q-rk-G5p"/>
                     <connections>
                         <outlet property="activity" destination="MRl-tK-Xda" id="JSp-gH-kgR"/>
                         <outlet property="goToSettingsButton" destination="UYU-64-I0H" id="tJV-Yn-lGu"/>
                         <outlet property="jobsList" destination="m8p-ez-Kj7" id="a7L-QM-mTQ"/>
                         <outlet property="settingsWarning" destination="MO3-xk-fsI" id="jDa-66-mtl"/>
                         <outlet property="settingsWarningLabel" destination="4tf-dV-xQG" id="k9u-FF-2zd"/>
-                        <segue destination="cu6-Vi-uuB" kind="modal" identifier="showJobDetail" id="Z7X-9D-6Jz"/>
+                        <segue destination="cu6-Vi-uuB" kind="push" identifier="showJobDetail" id="Z7X-9D-6Jz"/>
                         <segue destination="kfp-ke-S3e" kind="modal" identifier="showSettings" id="FQA-GA-9AC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="304" y="385"/>
+            <point key="canvasLocation" x="1284" y="385"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="FJk-96-D9j">
@@ -375,7 +376,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="modal" identifier="backToJobsList" id="0u4-eR-FXh"/>
+                                    <segue destination="uyi-uv-uDy" kind="modal" identifier="backToJobsList" id="0u4-eR-FXh"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="zxD-c1-XMW">
@@ -398,6 +399,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="1Tq-do-nWh"/>
                     <connections>
                         <outlet property="applyButton" destination="zxD-c1-XMW" id="Awj-yL-Zbl"/>
                         <outlet property="backToList" destination="G19-h2-Q4m" id="m6w-3v-Lyz"/>
@@ -407,7 +409,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gvy-Rz-qAs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1320" y="515"/>
+            <point key="canvasLocation" x="2300" y="515"/>
         </scene>
         <!--Form View Controller-->
         <scene sceneID="RST-6Y-Zgg">
@@ -551,7 +553,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wXh-OO-gg6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2284" y="353"/>
+            <point key="canvasLocation" x="3264" y="353"/>
         </scene>
         <!--Thank You Controller-->
         <scene sceneID="QXi-wO-KXc">
@@ -574,7 +576,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gGo-Xs-3BR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3171" y="326"/>
+            <point key="canvasLocation" x="4151" y="326"/>
         </scene>
         <!--Error View Controller-->
         <scene sceneID="bgS-Wi-juv">
@@ -608,6 +610,24 @@ Please try again.</string>
             </objects>
             <point key="canvasLocation" x="3171" y="1494"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Y43-FG-rRX">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uyi-uv-uDy" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mhj-aj-OiM">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="I3I-MW-u1b"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IQp-vS-bSm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="304" y="385"/>
+        </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -615,7 +635,7 @@ Please try again.</string>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="eAp-HS-WBU"/>
         <segue reference="oXH-oa-oLL"/>
+        <segue reference="Z7X-9D-6Jz"/>
     </inferredMetricsTieBreakers>
 </document>
