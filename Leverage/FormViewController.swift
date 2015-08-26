@@ -40,6 +40,7 @@ class FormViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBarHidden = false
         // Do any additional setup after loading the view, typically from a nib.
         backToDetailButton.layer.cornerRadius = 3
         backToDetailButton.contentEdgeInsets = UIEdgeInsets(top: 9, left: 15, bottom: 9, right: 15)
@@ -78,15 +79,7 @@ class FormViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        if (segue.identifier == "backToJobDetail") {
-            let detailViewController = segue.destinationViewController as! DetailViewController
-            detailViewController.selected_job_guid = self.selected_job_guid;
-            detailViewController.description_url = self.description_url;
-        }
-    }
-    
+        
     private func sendFormData(full_name_value: NSString, email_address_value: NSString, phone_number_value: NSString, resume_value: NSString, comments_value: NSString) {
         // create the request & response
         var request = NSMutableURLRequest(URL: NSURL(string: "https://api.lever.co/v0/postings/\(self.lever_url)/\(self.lever_api_key)")!, cachePolicy: NSURLRequestCachePolicy.ReloadIgnoringLocalCacheData, timeoutInterval: 5)
