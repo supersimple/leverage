@@ -110,6 +110,7 @@
                                         </state>
                                         <connections>
                                             <action selector="applyButton:" destination="kfp-ke-S3e" eventType="touchUpInside" id="WvZ-eA-OaR"/>
+                                            <segue destination="BYZ-38-t0r" kind="push" identifier="showInitialJobsList" id="SnD-Ka-woT"/>
                                         </connections>
                                     </button>
                                     <view alpha="0.33000000000000002" contentMode="scaleToFill" id="LRn-fH-VcB">
@@ -210,7 +211,6 @@
                         <outlet property="showCommitment" destination="kFB-Dx-W10" id="nad-Q8-lDW"/>
                         <outlet property="showLocation" destination="Hj4-gK-buw" id="qXO-Ed-Uvx"/>
                         <outlet property="showTeam" destination="TZi-L4-rfq" id="C0p-iq-iHE"/>
-                        <segue destination="BYZ-38-t0r" kind="push" identifier="showInitialJobsList" id="kCX-eC-zQn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xt7-ds-5MK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -298,7 +298,7 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="XUM-3k-PCE"/>
                                 </connections>
                             </tableView>
-                            <view hidden="YES" alpha="0.94999999999999996" contentMode="scaleToFill" id="MO3-xk-fsI">
+                            <view alpha="0.94999999999999996" contentMode="scaleToFill" id="MO3-xk-fsI">
                                 <rect key="frame" x="0.0" y="80" width="768" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                 <subviews>
@@ -651,6 +651,6 @@ Please try again.</string>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="I3I-MW-u1b"/>
+        <segue reference="SnD-Ka-woT"/>
     </inferredMetricsTieBreakers>
 </document>

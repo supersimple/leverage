@@ -34,7 +34,7 @@ class SettingsViewController: UIViewController {
         userDefaults.setObject(showLocation.on, forKey: "list_location")
         userDefaults.setObject(showTeam.on, forKey: "list_team")
         userDefaults.setObject(showCommitment.on, forKey: "list_commitment")
-        self.performSegueWithIdentifier("showInitialJobsList", sender: nil)
+        //self.performSegueWithIdentifier("showInitialJobsList", sender: nil)
         //self.dismissViewControllerAnimated(true, completion: {}); //modal presentation only
     }
     
@@ -44,7 +44,13 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //setup the values of each form element
+        self.guidField.text = userDefaults.valueForKey("lever_url") as! String
+        self.apikeyField.text = userDefaults.valueForKey("lever_api_key") as! String
+        self.referralCodeField.text = userDefaults.valueForKey("lever_referral_code") as! String
+        self.showLocation.on = userDefaults.valueForKey("list_location") as! Bool
+        self.showTeam.on = userDefaults.valueForKey("list_team") as! Bool
+        self.showCommitment.on = userDefaults.valueForKey("list_commitment") as! Bool
     }
     
     override func viewWillAppear(animated: Bool) {

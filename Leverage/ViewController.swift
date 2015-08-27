@@ -54,23 +54,23 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.list_team = (self.userDefaults.valueForKey("list_team") as? Bool)!
         self.list_commitment = (self.userDefaults.valueForKey("list_commitment") as? Bool)!
         
+        goToSettingsButton.layer.cornerRadius = 3
+        goToSettingsButton.contentEdgeInsets = UIEdgeInsets(top: 9, left: 15, bottom: 9, right: 15)
+
+        
         startConnection();
         
         if(self.lever_url == defaultUrl || self.lever_api_key == defaultApiKey){
-//            settingsWarning.layer.cornerRadius = 3
-//            settingsWarning.layer.borderColor = UIColor( red: 66/255, green: 66/255, blue:66/255, alpha: 0.9 ).CGColor
-//            settingsWarning.layer.borderWidth = 1.0
             if(self.lever_url == defaultUrl){
                 settingsWarningLabel.text = "You are currently viewing sample data. Please go to your settings to customize the app for your account."
             }else if(self.lever_api_key == defaultApiKey){
                 settingsWarningLabel.text = "You currently do not have an API Key set. Please go to your settings to customize the app for your account."
             }
-            goToSettingsButton.layer.cornerRadius = 3
-            goToSettingsButton.contentEdgeInsets = UIEdgeInsets(top: 9, left: 15, bottom: 9, right: 15)
-            settingsWarning.hidden = false
+
         }else{
             //hide the modal warning
-            settingsWarning.hidden = true
+            //settingsWarning.hidden = true
+            settingsWarningLabel.text = ""
         }
         
     }
