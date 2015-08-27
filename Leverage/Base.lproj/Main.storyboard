@@ -48,6 +48,7 @@
             <string>Lato-Regular</string>
             <string>Lato-Regular</string>
             <string>Lato-Regular</string>
+            <string>Lato-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -376,6 +377,9 @@
                                 <state key="normal" title="BACK">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="backToListButton:" destination="cu6-Vi-uuB" eventType="touchUpInside" id="Qcx-o8-qAR"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="zxD-c1-XMW">
                                 <rect key="frame" x="570" y="100" width="182" height="34"/>
@@ -439,6 +443,9 @@
                                 <state key="normal" title="BACK">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="backToDetailButton:" destination="XDx-s5-Phf" eventType="touchUpInside" id="Rp6-0W-Ve8"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" id="iAe-pz-2oX">
                                 <rect key="frame" x="16" y="153" width="736" height="431"/>
@@ -598,6 +605,19 @@ Please try again.</string>
                                 <color key="textColor" red="0.26827050260000002" green="0.26827050260000002" blue="0.26827050260000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="FbI-Ov-282">
+                                <rect key="frame" x="287" y="412" width="195" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.63137254899999995" blue="0.86274509799999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
+                                <state key="normal" title="BACK TO APPLICATION">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backToApplicationButton:" destination="o0c-Aa-s8H" eventType="touchUpInside" id="0vl-JV-EJ8"/>
+                                    <action selector="backToDetailButton:" destination="XDx-s5-Phf" eventType="touchUpInside" id="tP1-uh-fk5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.97213955019999998" green="0.97213955019999998" blue="0.97213955019999998" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -609,12 +629,11 @@ Please try again.</string>
         <!--Navigation Controller-->
         <scene sceneID="Y43-FG-rRX">
             <objects>
-                <navigationController storyboardIdentifier="navController" automaticallyAdjustsScrollViewInsets="NO" id="uyi-uv-uDy" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="navController" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="uyi-uv-uDy" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="JAy-6C-SeO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mhj-aj-OiM">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mhj-aj-OiM" userLabel="mainNavBar">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

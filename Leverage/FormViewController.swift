@@ -27,6 +27,10 @@ class FormViewController: UIViewController {
     @IBOutlet weak var resumeField: UITextField!
     @IBOutlet weak var commentsField: UITextView!
     
+    @IBAction func backToDetailButton(sender: AnyObject) {
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+    
     @IBOutlet weak var applyButton: UIButton!
     @IBAction func applyButton(sender: AnyObject) {
         var full_name_value = fullnameField.text;
@@ -40,7 +44,6 @@ class FormViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBarHidden = false
         // Do any additional setup after loading the view, typically from a nib.
         backToDetailButton.layer.cornerRadius = 3
         backToDetailButton.contentEdgeInsets = UIEdgeInsets(top: 9, left: 15, bottom: 9, right: 15)

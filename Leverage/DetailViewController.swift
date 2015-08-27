@@ -12,6 +12,9 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var backToList: UIButton!
     @IBOutlet weak var applyButton: UIButton!
+    @IBAction func backToListButton(sender: AnyObject) {
+        self.navigationController?.popViewControllerAnimated(true)
+    }
     
     @IBOutlet weak var web_view: UIWebView!
     
@@ -33,7 +36,6 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.navigationController?.navigationBarHidden = false
         backToList.layer.cornerRadius = 3
         backToList.contentEdgeInsets = UIEdgeInsets(top: 9, left: 15, bottom: 9, right: 15)
         applyButton.layer.cornerRadius = 3

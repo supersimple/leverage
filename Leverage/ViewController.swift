@@ -28,7 +28,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var list_team: Bool = true
     var list_commitment: Bool = true
     
-    
     @IBOutlet weak var activity: UIActivityIndicatorView!
     @IBOutlet weak var settingsWarning: UIView!
     @IBOutlet weak var settingsWarningLabel: UILabel!
@@ -48,9 +47,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         activity.startAnimating();
         // Do any additional setup after loading the view, typically from a nib
-        
-        self.navigationController?.navigationBarHidden = true
-        
         self.lever_url = parseLeverUrl(self.userDefaults.valueForKey("lever_url") as! String) as String
         self.lever_api_key = settingOrDefault(self.userDefaults.valueForKey("lever_api_key") as! String, def: defaultApiKey) as String
         self.request_path = self.urlPath + self.lever_url + "?mode=" + self.responseMode;
