@@ -46,6 +46,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         activity.startAnimating();
+        if(self.lever_url == ""){
+            return redirectToSettings()
+        }
+        
         // Do any additional setup after loading the view, typically from a nib
         self.lever_url = parseLeverUrl(self.userDefaults.valueForKey("lever_url") as! String) as String
         self.lever_api_key = settingOrDefault(self.userDefaults.valueForKey("lever_api_key") as! String, def: defaultApiKey) as String
@@ -69,7 +73,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
         }else{
             //hide the modal warning
-            //settingsWarning.hidden = true
+            settingsWarning.hidden = true
             settingsWarningLabel.text = ""
         }
         

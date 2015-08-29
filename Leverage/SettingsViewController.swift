@@ -27,6 +27,9 @@ class SettingsViewController: UIViewController {
         if(apikeyField.text.isEmpty){
             apikeyField.text = self.defaultApi;
         }
+        if(referralCodeField.text.isEmpty){
+            referralCodeField.text = "";
+        }
         
         userDefaults.setObject(guidField.text, forKey: "lever_url")
         userDefaults.setObject(apikeyField.text, forKey: "lever_api_key")
@@ -44,13 +47,17 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var s:SettingsHelper = SettingsHelper()
+        println(s.reply());
+        
         //setup the values of each form element
-        self.guidField.text = userDefaults.valueForKey("lever_url") as! String
-        self.apikeyField.text = userDefaults.valueForKey("lever_api_key") as! String
-        self.referralCodeField.text = userDefaults.valueForKey("lever_referral_code") as! String
-        self.showLocation.on = userDefaults.valueForKey("list_location") as! Bool
-        self.showTeam.on = userDefaults.valueForKey("list_team") as! Bool
-        self.showCommitment.on = userDefaults.valueForKey("list_commitment") as! Bool
+        self.guidField.text = userAlreadyExist("lever_url") ? userDefaults.valueForKey("lever_url") as! String : ""
+        self.apikeyField.text = userAlreadyExist("lever_api_key") ? userDefaults.valueForKey("lever_api_key") as! String : ""
+        self.referralCodeField.text = userAlreadyExist("lever_referral_code") ? userDefaults.valueForKey("lever_referral_code") as! String : ""
+        self.showLocation.on = userAlreadyExist("list_location") ? userDefaults.valueForKey("list_location") as! Bool : true
+        self.showTeam.on = userAlreadyExist("list_team") ? userDefaults.valueForKey("list_team") as! Bool : true
+        self.showCommitment.on = userAlreadyExist("list_commitment") ? userDefaults.valueForKey("list_commitment") as! Bool : true
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -67,7 +74,15 @@ class SettingsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
+    private func userAlreadyExist(kUSERID: String) -> Bool {
+        var userDefaults : NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        
+        if (userDefaults.objectForKey(kUSERID) != nil) {
+            return true
+        }
+        
+        return false
+    }
 }
 
 

@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var mainViewController: ViewController = navController.viewControllers[0] as! ViewController
         var settingsViewController: SettingsViewController = mainStoryboard.instantiateViewControllerWithIdentifier("SettingsViewController") as! SettingsViewController
         if(lever_url == "" || list_location == nil || list_team == nil || list_commitment == nil){
-            self.window?.rootViewController = settingsViewController
+            self.window?.rootViewController = navController//settingsViewController
             
         }else{
             //self.window?.rootViewController = mainViewController

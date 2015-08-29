@@ -110,7 +110,7 @@
                                         </state>
                                         <connections>
                                             <action selector="applyButton:" destination="kfp-ke-S3e" eventType="touchUpInside" id="WvZ-eA-OaR"/>
-                                            <segue destination="BYZ-38-t0r" kind="push" identifier="showInitialJobsList" id="SnD-Ka-woT"/>
+                                            <segue destination="BYZ-38-t0r" kind="push" identifier="showInitialJobsList" id="vk1-zD-N7j"/>
                                         </connections>
                                     </button>
                                     <view alpha="0.33000000000000002" contentMode="scaleToFill" id="LRn-fH-VcB">
@@ -245,7 +245,7 @@
                                 <color key="color" red="0.086274509803921567" green="0.47843137254901963" blue="0.78431372549019607" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
                             <tableView clipsSubviews="YES" contentMode="scaleAspectFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="76" sectionHeaderHeight="22" sectionFooterHeight="22" id="m8p-ez-Kj7">
-                                <rect key="frame" x="0.0" y="160" width="777" height="863"/>
+                                <rect key="frame" x="0.0" y="82" width="777" height="942"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -299,7 +299,7 @@
                                 </connections>
                             </tableView>
                             <view alpha="0.94999999999999996" contentMode="scaleToFill" id="MO3-xk-fsI">
-                                <rect key="frame" x="0.0" y="80" width="768" height="80"/>
+                                <rect key="frame" x="0.0" y="945" width="768" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please go to your settings to customize the app for your account." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4tf-dV-xQG">
@@ -322,7 +322,7 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" id="uyh-ka-Wjx">
-                                        <rect key="frame" x="0.0" y="79" width="786" height="1"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="768" height="1"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                                         <color key="backgroundColor" red="0.71775793650793651" green="0.71775793650793651" blue="0.71775793650793651" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
@@ -651,6 +651,6 @@ Please try again.</string>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="SnD-Ka-woT"/>
+        <segue reference="vk1-zD-N7j"/>
     </inferredMetricsTieBreakers>
 </document>
