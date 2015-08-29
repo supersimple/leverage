@@ -48,8 +48,8 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var s:SettingsHelper = SettingsHelper()
-        println(s.reply());
+        let s:SettingsHelper = SettingsHelper()
+        print(s.reply());
         
         //setup the values of each form element
         self.guidField.text = userAlreadyExist("lever_url") ? userDefaults.valueForKey("lever_url") as! String : ""
@@ -75,7 +75,7 @@ class SettingsViewController: UIViewController {
     }
     
     private func userAlreadyExist(kUSERID: String) -> Bool {
-        var userDefaults : NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        let userDefaults : NSUserDefaults = NSUserDefaults.standardUserDefaults()
         
         if (userDefaults.objectForKey(kUSERID) != nil) {
             return true

@@ -62,21 +62,21 @@ class DetailViewController: UIViewController {
     private func loadPage() {
         let url = NSURL(string: description_url)
         let session = NSURLSession.sharedSession()
-        println(url);
+        print(url);
         let task = session.dataTaskWithURL(url!, completionHandler: {data, response, error -> Void in
-            println("Task completed")
+            print("Task completed")
             if(error != nil) {
                 // If there is an error in the web request, print it to the console
-                println(error.localizedDescription)
+                print(error.localizedDescription)
             }
             var err: NSError?
             
             
             
-            var jsonResult = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &err) as! NSDictionary
+            var jsonResult = (try! NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers)) as! NSDictionary
             if(err != nil) {
                 // If there is an error parsing JSON, print it to the console
-                println("JSON Error \(err!.localizedDescription)")
+                print("JSON Error \(err!.localizedDescription)")
             }
             let results: NSDictionary = jsonResult as NSDictionary
             dispatch_async(dispatch_get_main_queue(), {
@@ -98,7 +98,7 @@ class DetailViewController: UIViewController {
     }
     
     func parseLeverUrl(str: String) -> String {
-        var arr = str.componentsSeparatedByString("/");
+        let arr = str.componentsSeparatedByString("/");
         return arr.last!
     }
     

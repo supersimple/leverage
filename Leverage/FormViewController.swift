@@ -33,11 +33,11 @@ class FormViewController: UIViewController {
     
     @IBOutlet weak var applyButton: UIButton!
     @IBAction func applyButton(sender: AnyObject) {
-        var full_name_value = fullnameField.text;
-        var email_address_value = emailField.text;
-        var phone_number_value = phonenumberField.text;
-        var resume_value = resumeField.text;
-        var comments_value = commentsField.text;
+        let full_name_value = fullnameField.text;
+        let email_address_value = emailField.text;
+        let phone_number_value = phonenumberField.text;
+        let resume_value = resumeField.text;
+        let comments_value = commentsField.text;
         
         sendFormData(full_name_value, email_address_value: email_address_value, phone_number_value: phone_number_value, resume_value: resume_value, comments_value: comments_value);
     }
@@ -85,7 +85,7 @@ class FormViewController: UIViewController {
         
     private func sendFormData(full_name_value: NSString, email_address_value: NSString, phone_number_value: NSString, resume_value: NSString, comments_value: NSString) {
         // create the request & response
-        var request = NSMutableURLRequest(URL: NSURL(string: "https://api.lever.co/v0/postings/\(self.lever_url)/\(self.lever_api_key)")!, cachePolicy: NSURLRequestCachePolicy.ReloadIgnoringLocalCacheData, timeoutInterval: 5)
+        let request = NSMutableURLRequest(URL: NSURL(string: "https://api.lever.co/v0/postings/\(self.lever_url)/\(self.lever_api_key)")!, cachePolicy: NSURLRequestCachePolicy.ReloadIgnoringLocalCacheData, timeoutInterval: 5)
         var response: NSURLResponse?
         var error: NSError?
         
@@ -103,18 +103,22 @@ class FormViewController: UIViewController {
         //        request.HTTPBody = jsonString.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
         request.HTTPMethod = "POST"
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-        println(request)
+        print(request)
         
-        // send the request
-        NSURLConnection.sendSynchronousRequest(request, returningResponse: &response, error: &error)
+        do {
+            // send the request
+            try NSURLConnection.sendSynchronousRequest(request, returningResponse: &response)
+        } catch let error1 as NSError {
+            error = error1
+        }
         
         // look at the response
         if let httpResponse = response as? NSHTTPURLResponse {
-            println("HTTP response: \(httpResponse)")
+            print("HTTP response: \(httpResponse)")
             //move to thank you view
             self.performSegueWithIdentifier("thankYouSegue", sender: nil)
         } else {
-            println("No HTTP response")
+            print("No HTTP response")
             //move to error view
             self.performSegueWithIdentifier("errorSegue", sender: nil)
         }
@@ -122,6 +126,6 @@ class FormViewController: UIViewController {
     
     // Convert from NSData to json object
     private class func nsdataToJSON(data: NSData) -> AnyObject? {
-        return NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers, error: nil)
+        return try? NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers)
     }
 }

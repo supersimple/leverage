@@ -17,15 +17,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         let userDefaults = NSUserDefaults.standardUserDefaults();
-        var lever_url = userDefaults.valueForKey("lever_url") as? String
+        let lever_url = userDefaults.valueForKey("lever_url") as? String
         var lever_api_key = userDefaults.valueForKey("lever_api_key") as? String
-        var list_location = userDefaults.valueForKey("list_location") as? Bool
-        var list_team = userDefaults.valueForKey("list_team") as? Bool
-        var list_commitment = userDefaults.valueForKey("list_commitment") as? Bool
+        let list_location = userDefaults.valueForKey("list_location") as? Bool
+        let list_team = userDefaults.valueForKey("list_team") as? Bool
+        let list_commitment = userDefaults.valueForKey("list_commitment") as? Bool
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        var navController:UINavigationController = mainStoryboard.instantiateViewControllerWithIdentifier("navController") as! UINavigationController
+        let navController:UINavigationController = mainStoryboard.instantiateViewControllerWithIdentifier("navController") as! UINavigationController
         var mainViewController: ViewController = navController.viewControllers[0] as! ViewController
         var settingsViewController: SettingsViewController = mainStoryboard.instantiateViewControllerWithIdentifier("SettingsViewController") as! SettingsViewController
         if(lever_url == "" || list_location == nil || list_team == nil || list_commitment == nil){

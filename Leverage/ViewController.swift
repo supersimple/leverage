@@ -92,7 +92,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func parseLeverUrl(str: String) -> String {
-        var arr = str.componentsSeparatedByString("/");
+        let arr = str.componentsSeparatedByString("/");
         return arr.last!
     }
     
@@ -103,9 +103,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func startConnection(){
         
-        var url: NSURL = NSURL(string: self.request_path)!
-        var request: NSURLRequest = NSURLRequest(URL: url)
-        var connection: NSURLConnection = NSURLConnection(request: request, delegate: self, startImmediately: false)!
+        let url: NSURL = NSURL(string: self.request_path)!
+        let request: NSURLRequest = NSURLRequest(URL: url)
+        let connection: NSURLConnection = NSURLConnection(request: request, delegate: self, startImmediately: false)!
         connection.start()
     }
     
@@ -120,11 +120,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func connectionDidFinishLoading(connection: NSURLConnection!) {
         var err: NSError
         // throwing an error on the line below (can't figure out where the error message is)
-        var jsonResult: NSArray = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as! NSArray
+        let jsonResult: NSArray = (try! NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers)) as! NSArray
         
         for item in jsonResult { // loop through data items
             let obj = item as! NSDictionary
-            var job = Job(properties: obj)
+            let job = Job(properties: obj)
             self.items.append(job)
             
         }
@@ -138,7 +138,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell:cellView = self.jobsList.dequeueReusableCellWithIdentifier("cell") as! cellView
+        let cell:cellView = self.jobsList.dequeueReusableCellWithIdentifier("cell") as! cellView
         
         cell.cellJob.text = self.items[indexPath.row].text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) as String
         cell.cellLocation.text = self.items[indexPath.row].categories["location"] as? String
@@ -149,7 +149,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             prepareStringForConcat(checkForNil(self.items[indexPath.row].categories,k: "commitment") as String!, display: self.list_commitment)
         
         
-        cell.cellButton.stored_guid = self.items[indexPath.row].uuid as! String
+        cell.cellButton.stored_guid = self.items[indexPath.row].uuid as String
         //zebra table
         if(indexPath.row % 2 > 0){
             cell.backgroundColor = UIColor(red: 0.975, green: 0.975, blue: 0.975, alpha: 1)
