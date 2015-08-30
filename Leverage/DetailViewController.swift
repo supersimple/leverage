@@ -20,14 +20,14 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var job_title: UILabel!
     
-    let urlPath: String = "https://api.lever.co/v0/postings/"
-    let responseMode = "json"
+    let settings:SettingsHelper = SettingsHelper()
+
     var selected_job_guid: String = "";
     var request_path: String = ""
     var lever_url: String = ""
     var lever_api_key: String = ""
     var description_url: String = ""; //passed in via segue
-    
+    let userDefaults = NSUserDefaults.standardUserDefaults();
     var job_text: NSString = "";
     var job_description: NSString = "";
     var job_lists: NSArray = [];
@@ -46,12 +46,11 @@ class DetailViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        let userDefaults = NSUserDefaults.standardUserDefaults();
         
-        self.lever_url = userDefaults.valueForKey("lever_url") as! String
-        self.lever_api_key = userDefaults.valueForKey("lever_api_key") as! String
-        self.request_path = self.urlPath + self.lever_url + "?mode=" + self.responseMode;
-        
+        self.lever_url            = settings.userSettingExists("lever_url") ? userDefaults.valueForKey("lever_url") as! String : settings.defaultUrl
+        self.lever_api_key        = settings.userSettingExists("lever_api_key") ? userDefaults.valueForKey("lever_api_key") as! String : settings.defaultApiKey
+        self.request_path         = settings.urlPath + self.lever_url + "?mode=" + settings.responseMode;
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -67,13 +66,11 @@ class DetailViewController: UIViewController {
             print("Task completed")
             if(error != nil) {
                 // If there is an error in the web request, print it to the console
-                print(error.localizedDescription)
+                print(error!.localizedDescription)
             }
             var err: NSError?
             
-            
-            
-            var jsonResult = (try! NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers)) as! NSDictionary
+            let jsonResult = (NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers)) as! NSDictionary
             if(err != nil) {
                 // If there is an error parsing JSON, print it to the console
                 print("JSON Error \(err!.localizedDescription)")
@@ -113,10 +110,7 @@ class DetailViewController: UIViewController {
             // pass data to next view
             let formViewController = segue.destinationViewController as! FormViewController
             formViewController.selected_job_guid = self.selected_job_guid;
-            
-            
-            
-            formViewController.description_url = self.urlPath + parseLeverUrl(self.lever_url) as String + "/" + self.selected_job_guid
+            formViewController.description_url = settings.urlPath + parseLeverUrl(self.lever_url) as String + "/" + self.selected_job_guid
         }
     }
     

@@ -12,9 +12,9 @@ class FormViewController: UIViewController {
     
     @IBOutlet weak var backToDetailButton: UIButton!
     
+    let settings:SettingsHelper = SettingsHelper()
     var description_url: String = ""; //passed in via segue
-    let urlPath: String = "https://api.lever.co/v0/postings/"
-    let responseMode = "json"
+    let userDefaults = NSUserDefaults.standardUserDefaults();
     var selected_job_guid: String = "";
     var request_path: String = ""
     var lever_url: String = ""
@@ -39,7 +39,7 @@ class FormViewController: UIViewController {
         let resume_value = resumeField.text;
         let comments_value = commentsField.text;
         
-        sendFormData(full_name_value, email_address_value: email_address_value, phone_number_value: phone_number_value, resume_value: resume_value, comments_value: comments_value);
+        sendFormData(full_name_value!, email_address_value: email_address_value!, phone_number_value: phone_number_value!, resume_value: resume_value!, comments_value: comments_value!);
     }
     
     override func viewDidLoad() {
@@ -74,7 +74,7 @@ class FormViewController: UIViewController {
         self.lever_url = userDefaults.valueForKey("lever_url") as! String
         self.lever_api_key = userDefaults.valueForKey("lever_api_key") as! String
         self.lever_referral_code = userDefaults.valueForKey("lever_referral_code") as! String
-        self.request_path = self.urlPath + self.lever_url + "?mode=" + self.responseMode;
+        self.request_path = settings.urlPath + self.lever_url + "?mode=" + settings.responseMode;
         
     }
     

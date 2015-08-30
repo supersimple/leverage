@@ -34,7 +34,7 @@ class Job {
     }
     
     private func checkForNil(dict: NSDictionary, k: String) -> NSString{
-       if let tmp: AnyObject = dict[k]{
+       if let _: AnyObject = dict[k]{
            return dict[k] as! NSString
        }else{
            return ""

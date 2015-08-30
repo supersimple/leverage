@@ -21,13 +21,13 @@ class SettingsViewController: UIViewController {
     @IBAction func applyButton(sender: AnyObject) {
         //save the settings to userDefaults
         
-        if(guidField.text.isEmpty){
+        if(guidField.text!.isEmpty){
             guidField.text = self.defaultGuid;
         }
-        if(apikeyField.text.isEmpty){
+        if(apikeyField.text!.isEmpty){
             apikeyField.text = self.defaultApi;
         }
-        if(referralCodeField.text.isEmpty){
+        if(referralCodeField.text!.isEmpty){
             referralCodeField.text = "";
         }
         
@@ -48,16 +48,15 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let s:SettingsHelper = SettingsHelper()
-        print(s.reply());
+        let settings:SettingsHelper = SettingsHelper() //this is how you init an object
         
         //setup the values of each form element
-        self.guidField.text = userAlreadyExist("lever_url") ? userDefaults.valueForKey("lever_url") as! String : ""
-        self.apikeyField.text = userAlreadyExist("lever_api_key") ? userDefaults.valueForKey("lever_api_key") as! String : ""
-        self.referralCodeField.text = userAlreadyExist("lever_referral_code") ? userDefaults.valueForKey("lever_referral_code") as! String : ""
-        self.showLocation.on = userAlreadyExist("list_location") ? userDefaults.valueForKey("list_location") as! Bool : true
-        self.showTeam.on = userAlreadyExist("list_team") ? userDefaults.valueForKey("list_team") as! Bool : true
-        self.showCommitment.on = userAlreadyExist("list_commitment") ? userDefaults.valueForKey("list_commitment") as! Bool : true
+        self.guidField.text         = settings.userSettingExists("lever_url") ? userDefaults.valueForKey("lever_url") as! String : defaultGuid
+        self.apikeyField.text       = settings.userSettingExists("lever_api_key") ? userDefaults.valueForKey("lever_api_key") as! String : defaultApi
+        self.referralCodeField.text = settings.userSettingExists("lever_referral_code") ? userDefaults.valueForKey("lever_referral_code") as! String : ""
+        self.showLocation.on        = settings.userSettingExists("list_location") ? userDefaults.valueForKey("list_location") as! Bool : true
+        self.showTeam.on            = settings.userSettingExists("list_team") ? userDefaults.valueForKey("list_team") as! Bool : true
+        self.showCommitment.on      = settings.userSettingExists("list_commitment") ? userDefaults.valueForKey("list_commitment") as! Bool : true
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -73,16 +72,7 @@ class SettingsViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    private func userAlreadyExist(kUSERID: String) -> Bool {
-        let userDefaults : NSUserDefaults = NSUserDefaults.standardUserDefaults()
-        
-        if (userDefaults.objectForKey(kUSERID) != nil) {
-            return true
-        }
-        
-        return false
-    }
+
 }
 
 

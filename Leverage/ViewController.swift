@@ -11,18 +11,14 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     lazy var data = NSMutableData()
 
-    
+    let settings:SettingsHelper = SettingsHelper()
     var guid_value: String = "";
     var api_key_value: String = "";
     var items = [Job]()
-    let urlPath: String = "https://api.lever.co/v0/postings/"
-    let responseMode = "json"
     var selected_job_guid: String = "";
     var request_path: String = ""
     var lever_url: String = ""
     var lever_api_key: String = ""
-    let defaultApiKey = "5ac21346-8e0c-4494-8e7a-3eb92ff77902"
-    let defaultUrl = "leverdemo";
     let userDefaults = NSUserDefaults.standardUserDefaults();
     var list_location: Bool = true
     var list_team: Bool = true
@@ -46,17 +42,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         activity.startAnimating();
+        
+        // Do any additional setup after loading the view, typically from a nib
+
+        //setup the values of each form element
+        self.lever_url            = settings.userSettingExists("lever_url") ? userDefaults.valueForKey("lever_url") as! String : settings.defaultUrl
+        self.lever_api_key        = settings.userSettingExists("lever_api_key") ? userDefaults.valueForKey("lever_api_key") as! String : settings.defaultApiKey
+        self.list_location        = settings.userSettingExists("list_location") ? userDefaults.valueForKey("list_location") as! Bool : true
+        self.list_team            = settings.userSettingExists("list_team") ? userDefaults.valueForKey("list_team") as! Bool : true
+        self.list_commitment      = settings.userSettingExists("list_commitment") ? userDefaults.valueForKey("list_commitment") as! Bool : true
+        self.request_path         = settings.urlPath + self.lever_url + "?mode=" + settings.responseMode;
+        
+        
         if(self.lever_url == ""){
             return redirectToSettings()
         }
-        
-        // Do any additional setup after loading the view, typically from a nib
-        self.lever_url = parseLeverUrl(self.userDefaults.valueForKey("lever_url") as! String) as String
-        self.lever_api_key = settingOrDefault(self.userDefaults.valueForKey("lever_api_key") as! String, def: defaultApiKey) as String
-        self.request_path = self.urlPath + self.lever_url + "?mode=" + self.responseMode;
-        self.list_location = (self.userDefaults.valueForKey("list_location") as? Bool)!
-        self.list_team = (self.userDefaults.valueForKey("list_team") as? Bool)!
-        self.list_commitment = (self.userDefaults.valueForKey("list_commitment") as? Bool)!
         
         goToSettingsButton.layer.cornerRadius = 3
         goToSettingsButton.contentEdgeInsets = UIEdgeInsets(top: 9, left: 15, bottom: 9, right: 15)
@@ -64,10 +64,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         startConnection();
         
-        if(self.lever_url == defaultUrl || self.lever_api_key == defaultApiKey){
-            if(self.lever_url == defaultUrl){
+        if(self.lever_url == settings.defaultUrl || self.lever_api_key == settings.defaultApiKey){
+            if(self.lever_url == settings.defaultUrl){
                 settingsWarningLabel.text = "You are currently viewing sample data. Please go to your settings to customize the app for your account."
-            }else if(self.lever_api_key == defaultApiKey){
+            }else if(self.lever_api_key == settings.defaultApiKey){
                 settingsWarningLabel.text = "You currently do not have an API Key set. Please go to your settings to customize the app for your account."
             }
 
@@ -133,7 +133,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.jobsList!.reloadData()
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {        
         return self.items.count
     }
     
@@ -161,7 +161,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     private func checkForNil(dict: NSDictionary, k: String) -> String{
-        if let tmp: AnyObject = dict[k]{
+        if let _: AnyObject = dict[k]{
             
             if let val = dict[k] as? String {
                 return val;
@@ -202,7 +202,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             // pass data to next view
             let detailViewController = segue.destinationViewController as! DetailViewController
             detailViewController.selected_job_guid = self.selected_job_guid;
-            detailViewController.description_url = self.urlPath + self.lever_url + "/" + self.selected_job_guid
+            detailViewController.description_url = settings.urlPath + self.lever_url + "/" + self.selected_job_guid
         }
     }
     
